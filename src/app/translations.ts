@@ -1,0 +1,120 @@
+export type Language = 'fr' | 'en';
+
+export const translations = {
+  fr: {
+    nav: {
+      home: 'Accueil',
+      about: 'À propos',
+      skills: 'Compétences',
+      projects: 'Projets',
+      contact: 'Contact'
+    },
+    hero: {
+      name: 'VOTRE NOM',
+      role: 'Développeur Full-Stack',
+      description: 'Passionné par la création d\'expériences digitales innovantes et performantes. Spécialisé dans les technologies modernes et l\'architecture logicielle.'
+    },
+    about: {
+      title: 'À PROPOS',
+      text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Développeur passionné avec X années d\'expérience dans la création d\'applications web modernes et performantes.',
+      text2: 'J\'aime résoudre des problèmes complexes et transformer des idées en solutions concrètes et élégantes.'
+    },
+    skills: {
+      title: 'COMPÉTENCES'
+    },
+    projects: {
+      title: 'PROJETS',
+      items: [
+        {
+          title: 'Projet 1',
+          description: 'Application web full-stack avec React et Node.js. Système d\'authentification et dashboard interactif.',
+          tags: ['React', 'Node.js', 'MongoDB']
+        },
+        {
+          title: 'Projet 2',
+          description: 'Site e-commerce moderne avec paiement intégré et gestion de stock en temps réel.',
+          tags: ['Next.js', 'Stripe', 'PostgreSQL']
+        },
+        {
+          title: 'Projet 3',
+          description: 'API REST performante avec documentation Swagger et tests automatisés.',
+          tags: ['Python', 'FastAPI', 'Docker']
+        },
+        {
+          title: 'Projet 4',
+          description: 'Portfolio interactif avec animations 3D et design responsive.',
+          tags: ['Three.js', 'React', 'GSAP']
+        }
+      ]
+    },
+    contact: {
+      title: 'CONTACT',
+      text: 'Intéressé par une collaboration ? N\'hésitez pas à me contacter !',
+      email: 'Email',
+      github: 'GitHub',
+      linkedin: 'LinkedIn'
+    },
+    footer: {
+      rights: 'Tous droits réservés',
+      built: 'Built with Next.js & TailwindCSS'
+    }
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      about: 'About',
+      skills: 'Skills',
+      projects: 'Projects',
+      contact: 'Contact'
+    },
+    hero: {
+      name: 'YOUR NAME',
+      role: 'Full-Stack Developer',
+      description: 'Passionate about creating innovative and performant digital experiences. Specialized in modern technologies and software architecture.'
+    },
+    about: {
+      title: 'ABOUT',
+      text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionate developer with X years of experience in creating modern and performant web applications.',
+      text2: 'I love solving complex problems and turning ideas into concrete and elegant solutions.'
+    },
+    skills: {
+      title: 'SKILLS'
+    },
+    projects: {
+      title: 'PROJECTS',
+      items: [
+        {
+          title: 'Project 1',
+          description: 'Full-stack web application with React and Node.js. Authentication system and interactive dashboard.',
+          tags: ['React', 'Node.js', 'MongoDB']
+        },
+        {
+          title: 'Project 2',
+          description: 'Modern e-commerce site with integrated payment and real-time inventory management.',
+          tags: ['Next.js', 'Stripe', 'PostgreSQL']
+        },
+        {
+          title: 'Project 3',
+          description: 'Performant REST API with Swagger documentation and automated tests.',
+          tags: ['Python', 'FastAPI', 'Docker']
+        },
+        {
+          title: 'Project 4',
+          description: 'Interactive portfolio with 3D animations and responsive design.',
+          tags: ['Three.js', 'React', 'GSAP']
+        }
+      ]
+    },
+    contact: {
+      title: 'CONTACT',
+      text: 'Interested in working together? Feel free to contact me!',
+      email: 'Email',
+      github: 'GitHub',
+      linkedin: 'LinkedIn'
+    },
+    footer: {
+      rights: 'All rights reserved',
+      built: 'Built with Next.js & TailwindCSS'
+    }
+  }
+} as const;
