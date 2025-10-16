@@ -46,7 +46,7 @@ export default function Navbar({ activeSection, language, onLanguageToggle }: Na
               onClick={onLanguageToggle}
               className="px-3 py-1.5 font-mono text-sm border border-cyan-500/30 text-cyan-400 rounded
                        hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300 
-                       hover:shadow-[0_0_15px_rgba(0,255,255,0.3)]"
+                       hover:shadow-[0_0_20px_rgba(0,255,255,0.6)] shadow-[0_0_10px_rgba(0,255,255,0.2)]"
             >
               {language === 'fr' ? 'EN' : 'FR'}
             </button>

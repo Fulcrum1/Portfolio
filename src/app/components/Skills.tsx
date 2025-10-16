@@ -15,10 +15,11 @@ const skillsData = [
 
 export default function Skills({ language }: SkillsProps) {
   const t = translations[language];
+  const accentColors = ['', 'accent-cyan', '', 'accent-purple', '', 'accent-magenta'];
 
   return (
     <section id="skills" className="mb-20 scroll-mt-24">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left">
+      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left neon-glow-cyan">
         <span className="text-magenta-500 font-mono">{'<'}</span>
         {t.skills.title}
         <span className="text-magenta-500 font-mono">{'/>'}</span>
@@ -28,7 +29,7 @@ export default function Skills({ language }: SkillsProps) {
         {skillsData.map((group, idx) => (
           <div 
             key={idx} 
-            className="cyber-card rounded-lg p-5 animate-scale"
+            className={`cyber-card rounded-lg p-5 animate-scale ${accentColors[idx % accentColors.length]}`}
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
             <h3 className="text-purple-400 font-bold mb-3 text-lg font-mono">

@@ -9,7 +9,7 @@ export default function About({ language }: AboutProps) {
 
   return (
     <section id="about" className="mb-20 scroll-mt-24">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left">
+      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left neon-glow-cyan">
         <span className="text-magenta-500 font-mono">{'<'}</span>
         {t.about.title}
         <span className="text-magenta-500 font-mono">{'/>'}</span>

@@ -12,10 +12,10 @@ import Footer from './components/Footer';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
-  const [language, setLanguage] = useState<Language>('fr');
+  const [language, setLanguage] = useState<Language>('en');
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'fr' ? 'en' : 'fr');
+    setLanguage(prev => prev === 'en' ? 'fr' : 'en');
   };
 
   // Animation au scroll

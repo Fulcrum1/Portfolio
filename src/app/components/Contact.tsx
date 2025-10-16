@@ -9,7 +9,7 @@ export default function Contact({ language }: ContactProps) {
 
   return (
     <section id="contact" className="mb-20 scroll-mt-24">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left">
+      <h2 className="text-3xl font-bold text-cyan-400 mb-8 flex items-center gap-3 animate-fade-left neon-glow-cyan">
         <span className="text-magenta-500 font-mono">{'<'}</span>
         {t.contact.title}
         <span className="text-magenta-500 font-mono">{'/>'}</span>
@@ -19,12 +19,12 @@ export default function Contact({ language }: ContactProps) {
         <p className="text-gray-300 mb-6 text-lg">
           {t.contact.text}
         </p>
-        
         <div className="flex flex-wrap gap-4">
           <a 
             href="mailto:votre.email@example.com"
             className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg 
-                     hover:shadow-[0_0_30px_rgba(0,255,255,0.5)] transition-all duration-300 transform hover:scale-105"
+                     shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_35px_rgba(0,255,255,0.6)] 
+                     transition-all duration-300 transform hover:scale-105"
           >
             {t.contact.email}
           </a>
