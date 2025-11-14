@@ -189,28 +189,28 @@ export const translations = {
       title: "PROJECTS",
       items: [
         {
-          title: "Project 1",
+          title: "CSE Platform",
           description:
-            "Full-stack web application with React and Node.js. Authentication system and interactive dashboard.",
-          tags: ["React", "Node.js", "MongoDB"],
+            "Full-stack application for managing a Social and Economic Committee: dashboard, inventory, and orders. Built with Vue.js and Laravel.",
+          tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Project 2",
+          title: "CRM & E-commerce",
           description:
-            "Modern e-commerce site with integrated payment and real-time inventory management.",
-          tags: ["Next.js", "Stripe", "PostgreSQL"],
+            "Customer, order, and statistics management. Integrated e-commerce module. Stack: Vue.js, Laravel, and MySQL.",
+          tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Project 3",
+          title: "Time Management",
           description:
-            "Performant REST API with Swagger documentation and automated tests.",
-          tags: ["Python", "FastAPI", "Docker"],
+            "Tracking hours, projects, and leave. Developed with Svelte and Laravel for simplified HR management.",
+          tags: ["Svelte", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Project 4",
+          title: "Learning App - Japanese",
           description:
-            "Interactive portfolio with 3D animations and responsive design.",
-          tags: ["Three.js", "React", "GSAP"],
+            "Japanese learning application with flashcards and progress tracking. Stack: React, Next.js, and PostgreSQL.",
+          tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
         },
       ],
     },
