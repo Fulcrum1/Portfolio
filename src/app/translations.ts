@@ -19,39 +19,107 @@ export const translations = {
       title: "À PROPOS",
       text1:
         "Développeur informatique avec une expérience en développement d'applications, gestion de projets, et travail en équipe.",
-      text2:
-        "Compétences en JavaScript, PHP, HTML/CSS, Java, C#, et bases de données.",
+      text2: "Compétences en JavaScript, PHP, HTML/CSS, Java et C#.",
     },
-
+    // skills: {
+    //   title: "COMPÉTENCES",
+    //   items: [
+    //     {
+    //       category: "Frontend",
+    //       skills: ["Vue.js", "Svelte", "React", "Next.js", "TypeScript"],
+    //     },
+    //     {
+    //       category: "Backend",
+    //       skills: ["Node.js", "PHP", "Laravel", "API REST"],
+    //     },
+    //     {
+    //       category: "Backend",
+    //       skills: ["Node.js", "PHP", "PostgreSQL", "API REST"],
+    //     },
+    //     { category: "DevOps", skills: ["Docker", "Git", "CI/CD", "Cloud"] },
+    //     {
+    //       category: "Design",
+    //       skills: ["UI/UX", "Figma", "Responsive", "Animations"],
+    //     },
+    //     {
+    //       category: "Outils",
+    //       skills: ["VS Code", "Postman", "Linux", "Agile"],
+    //     },
+    //     {
+    //       category: "Soft Skills",
+    //       skills: ["Créativité", "Rigueur", "Collaboration", "Curiosité"],
+    //     },
+    //   ],
+    // },
     skills: {
       title: "COMPÉTENCES",
+      items: [
+        {
+          category: "Frontend",
+          skills: [
+            "Vue.js",
+            "React",
+            "Next.js",
+            "Svelte",
+            "TypeScript",
+            "HTML5/CSS3 (Tailwind, SCSS)",
+          ],
+        },
+        {
+          category: "Backend",
+          skills: ["Node.js", "PHP (Laravel)", "MySQL", "PostgreSQL"],
+        },
+        // {
+        {
+          category: "Soft Skills",
+          skills: [
+            "Résolution de problèmes",
+            "Adaptabilité",
+            "Travail d’équipe",
+            "Mentorat & Revue de code",
+          ],
+        },
+      ],
+    },
+    experiences: {
+      title: "EXPÉRIENCES",
+      items: [
+        {
+          title: "Développeur web",
+          company: "Infofil",
+          description:
+            "Développement d'applications web sur mesure principalement en Vue.js avec Laravel, mais également React avec Next.js.",
+          date: "2022 - en cours",
+          tags: ["Vue", "Laravel", "React", "Next.js", "PHP", "MySQL"],
+        },
+      ],
     },
     projects: {
       title: "PROJETS",
       items: [
         {
-          title: "Projet 1",
+          title: "Plateforme CSE",
           description:
-            "Application web full-stack avec React et Node.js. Système d'authentification et dashboard interactif.",
-          tags: ["React", "Node.js", "MongoDB"],
+            "Application full-stack pour la gestion d’un Comité Social et Économique : dashboard, stocks et commandes. Développée avec Vue.js et Laravel.",
+          tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Projet 2",
+          title: "CRM & E-commerce",
           description:
-            "Site e-commerce moderne avec paiement intégré et gestion de stock en temps réel.",
-          tags: ["Next.js", "Stripe", "PostgreSQL"],
+            "Gestion des clients, commandes et statistiques. Module e-commerce intégré. Stack : Vue.js, Laravel et MySQL.",
+          tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Projet 3",
+          title: "Gestion des temps",
           description:
-            "API REST performante avec documentation Swagger et tests automatisés.",
-          tags: ["Python", "FastAPI", "Docker"],
+            "Suivi des heures, projets et congés. Développée avec Svelte et Laravel pour une gestion RH simplifiée.",
+          tags: ["Svelte", "Laravel", "PHP", "MySQL"],
         },
         {
-          title: "Projet 4",
+          title: "Learning App - Japonais",
           description:
-            "Portfolio interactif avec animations 3D et design responsive.",
-          tags: ["Three.js", "React", "GSAP"],
+            "Application d’apprentissage du japonais avec flashcards et suivi de progression. Stack : React, Next.js et PostgreSQL.",
+          tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
         },
       ],
     },
@@ -85,11 +153,37 @@ export const translations = {
       title: "ABOUT",
       text1:
         "Computer developer with experience in application development, project management, and teamwork.",
-      text2:
-        "Skills in JavaScript, PHP, HTML/CSS, Java, C#, and databases.",
+      text2: "Skills in JavaScript, PHP, HTML/CSS, Java, C#, and databases.",
     },
     skills: {
-      title: "SKILLS",
+      title: "COMPÉTENCES",
+      items: [
+        {
+          category: "Frontend",
+          skills: [
+            "Vue.js",
+            "React",
+            "Next.js",
+            "Svelte",
+            "TypeScript",
+            "HTML5/CSS3 (Tailwind, SCSS)",
+          ],
+        },
+        {
+          category: "Backend",
+          skills: ["Node.js", "PHP (Laravel)", "MySQL", "PostgreSQL"],
+        },
+        // {
+        {
+          category: "Soft Skills",
+          skills: [
+            "Problem-solving",
+            "Adaptability",
+            "Teamwork",
+            "Mentorship & Code review",
+          ],
+        },
+      ],
     },
     projects: {
       title: "PROJECTS",

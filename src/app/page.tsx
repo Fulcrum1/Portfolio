@@ -65,7 +65,7 @@ export default function Home() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-12 md:pt-40 md:pb-20">
+      <div className="relative max-w-6xl mx-auto px-6 pb-12 md:pb-20">
         <Hero language={language} />
         <About language={language} />
         <Skills language={language} />

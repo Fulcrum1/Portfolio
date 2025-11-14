@@ -1,6 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mon Projet
 
-## Getting Started
+A modern web application built with Next.js, React, and TypeScript.
+
+## 🚀 Features
+
+- **Next.js 14** with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Internationalization (i18n) support
+- Responsive design
+- Modern development tools (ESLint, Prettier)
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Type Checking**: [TypeScript](https://www.typescriptlang.org/)
+- **Internationalization**: Next.js i18n
+- **Linting**: [ESLint](https://eslint.org/)
+- **Code Formatting**: [Prettier](https://prettier.io/)
+
+## 🚀 Getting Started
 
 First, run the development server:
 
