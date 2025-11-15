@@ -127,8 +127,8 @@ body::before {
 
 /* Scan line effect */
 @keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
+  0% { transform: translateY(-100%); z-index: -10; }
+  100% { transform: translateY(100vh); z-index: -10; }
 }
 
 .scanline {
