@@ -72,18 +72,21 @@ export const translations = {
           description:
             "Application full-stack pour la gestion d’un Comité Social et Économique : dashboard, stocks et commandes. Développée avec Vue.js et Laravel.",
           tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "CRM & E-commerce",
           description:
             "Gestion des clients, commandes et statistiques. Module e-commerce intégré. Stack : Vue.js, Laravel et MySQL.",
           tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "Gestion des temps",
           description:
             "Suivi des heures, projets et congés. Développée avec Svelte et Laravel pour une gestion RH simplifiée.",
           tags: ["Svelte", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "Learning App - Japonais",
@@ -166,18 +169,21 @@ export const translations = {
           description:
             "Full-stack application for managing a Social and Economic Committee: dashboard, inventory, and orders. Built with Vue.js and Laravel.",
           tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "CRM & E-commerce",
           description:
             "Customer, order, and statistics management. Integrated e-commerce module. Stack: Vue.js, Laravel, and MySQL.",
           tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "Time Management",
           description:
             "Tracking hours, projects, and leave. Developed with Svelte and Laravel for simplified HR management.",
           tags: ["Svelte", "Laravel", "PHP", "MySQL"],
+          github: "",
         },
         {
           title: "Learning App - Japanese",
