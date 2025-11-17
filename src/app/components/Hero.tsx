@@ -1,6 +1,5 @@
 import React from "react";
 import { Language, translations } from "../translations";
-// Types
 
 interface Translations {
   hero: {
@@ -26,14 +25,14 @@ export default function Hero({ language = "fr" }: HeroProps) {
         <div className="flex flex-col lg:items-center lg:justify-between gap-8 lg:gap-12">
           <div className="flex-1">
             <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-              <div className="w-1 h-12 sm:h-16 bg-gradient-to-b from-cyan-400 to-purple-600 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.6)] flex-shrink-0 mt-1 sm:mt-0" />
+              <div className="hero-line w-1 h-12 sm:h-16 flex-shrink-0 mt-1 sm:mt-0" />
               <div className="min-w-0">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-2 break-words">
+                <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 break-words">
                   {t.hero.name.split(" ")[0]}
                   <br className="sm:hidden" />
                   <span className="sm:ml-3">{t.hero.name.split(" ")[1]}</span>
                 </h1>
-                <p className="text-base text-xl lg:text-2xl text-cyan-400 font-mono">
+                <p className="hero-text text-base text-xl lg:text-2xl font-mono">
                   <span className="inline-block mr-2">{">"}</span>
                   <span className="inline-block">{t.hero.role}</span>
                 </p>
@@ -42,14 +41,14 @@ export default function Hero({ language = "fr" }: HeroProps) {
           </div>
 
           <div className="flex-1 lg:max-w-2xl">
-            <p className="text-gray-300 text-base text-xl leading-relaxed">
+            <p className="text-base text-xl leading-relaxed">
               {t.hero.description}
             </p>
           </div>
         </div>
 
         <div className="hidden sm:flex justify-center mt-16 lg:mt-24">
-          <div className="flex flex-col items-center gap-2 text-cyan-400 opacity-60 animate-bounce">
+          <div className="scroll-color flex flex-col items-center gap-2 opacity-60 animate-bounce">
             <span className="text-xs uppercase tracking-wider">Scroll</span>
             <svg
               className="w-6 h-6"

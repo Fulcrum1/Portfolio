@@ -51,11 +51,7 @@ export default function Home() {
       
       {/* Grid background overlay */}
       <div 
-        className="fixed inset-0 opacity-10 pointer-events-none" 
-        style={{
-          backgroundImage: `linear-gradient(#00ffff 1px, transparent 1px), linear-gradient(90deg, #00ffff 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }} 
+        className="fixed inset-0 opacity-10 pointer-events-none cyber-background modern-background"
       />
 
       <Navbar 

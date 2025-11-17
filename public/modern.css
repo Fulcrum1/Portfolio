@@ -1,0 +1,309 @@
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1512 50%, #0d0d0d 100%);
+}
+
+body::before {
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(139, 90, 60, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(210, 180, 140, 0.03) 0%,
+      transparent 40%
+    );
+}
+
+.modern-background {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(210, 180, 140, 0.1) 2px,
+      rgba(210, 180, 140, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 90, 60, 0.1) 2px,
+      rgba(139, 90, 60, 0.1) 4px
+    );
+  background-size: 80px 80px;
+  z-index: 0;
+}
+
+/* Warm effects */
+.warm-border {
+  box-shadow: 0 0 10px rgba(139, 90, 60, 0.3),
+    inset 0 0 10px rgba(139, 90, 60, 0.1);
+}
+
+.warm-glow-tan {
+  text-shadow: 0 0 5px rgba(210, 180, 140, 0.8),
+    0 0 10px rgba(210, 180, 140, 0.6), 0 0 15px rgba(210, 180, 140, 0.4);
+}
+
+.warm-glow-brown {
+  text-shadow: 0 0 5px rgba(139, 90, 60, 0.8), 0 0 10px rgba(139, 90, 60, 0.6),
+    0 0 15px rgba(139, 90, 60, 0.4);
+}
+
+/* Card with elegant border */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(210, 180, 140, 0.2);
+  box-shadow: 0 0 20px rgba(139, 90, 60, 0.1);
+}
+
+.card:hover {
+  border-color: rgba(210, 180, 140, 0.5);
+  box-shadow: 0 0 30px rgba(139, 90, 60, 0.3);
+}
+
+.main-color {
+  color: var(--warm-main);
+}
+
+.border-main-color {
+  border-color: rgba(210, 180, 140, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #d2b48c 0%, #8b5a3c 50%, #d2b48c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Smooth slide effect */
+@keyframes smoothSlide {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+}
+
+.slide:hover::before {
+  animation: smoothSlide 0.5s ease;
+}
+
+/* Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+:root {
+  --warm-main: #d2b48c;
+  --warm-secondary: #8b5a3c;
+  --warm-light: #f5f5f0;
+  --warm-dark: #1a1512;
+}
+
+h2 {
+  color: var(--warm-main);
+  text-shadow: 0 0 5px rgba(210, 180, 140, 0.3),
+    0 0 10px rgba(210, 180, 140, 0.2);
+}
+
+h2 span {
+  color: var(--warm-main);
+}
+
+.about-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(210, 180, 140, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.left-vertical-line-main {
+  background: linear-gradient(
+    180deg,
+    var(--warm-main) 0%,
+    var(--warm-main) 100%
+  );
+  opacity: 0.5;
+}
+
+.left-vertical-line-secondary {
+  background: linear-gradient(
+    180deg,
+    var(--warm-secondary) 0%,
+    var(--warm-secondary) 100%
+  );
+  opacity: 0.5;
+}
+
+.animated-dot {
+  background-color: var(--warm-main);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.h3-skills {
+  color: var(--warm-secondary);
+}
+
+.h3-projects {
+  color: var(--warm-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.group:hover .h3-projects {
+  color: var(--warm-main);
+}
+
+li {
+  color: var(--warm-light);
+}
+
+li span {
+  color: var(--warm-main);
+}
+
+.tag-main {
+  background-color: rgba(210, 180, 140, 0.1);
+  border-color: rgba(210, 180, 140, 0.3);
+  color: var(--warm-main);
+}
+
+.tag-secondary {
+  background-color: rgba(139, 90, 60, 0.1);
+  border-color: rgba(139, 90, 60, 0.3);
+  color: var(--warm-secondary);
+}
+
+.contact-main-link {
+  border-color: var(--warm-main);
+  color: var(--warm-main);
+  transition: all 0.3s ease;
+}
+
+.contact-main-link:hover {
+  background-color: rgba(210, 180, 140, 0.1);
+  box-shadow: 0 0 20px rgba(210, 180, 140, 0.3);
+}
+
+.contact-secondary-link {
+  border-color: var(--warm-secondary);
+  color: var(--warm-secondary);
+  transition: all 0.3s ease;
+}
+
+.contact-secondary-link:hover {
+  background-color: rgba(139, 90, 60, 0.1);
+  box-shadow: 0 0 20px rgba(139, 90, 60, 0.3);
+}
+
+.hero-line {
+  background: linear-gradient(
+    180deg,
+    var(--warm-main) 0%,
+    var(--warm-secondary) 100%
+  );
+  border-radius: 9999px;
+  box-shadow: 0 0 15px rgba(210, 180, 140, 0.4);
+}
+
+.hero-title {
+  background: linear-gradient(
+    90deg,
+    var(--warm-main) 0%,
+    var(--warm-secondary) 50%,
+    var(--warm-main) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  color: var(--warm-light);
+}
+
+.scroll-color {
+  color: var(--warm-main);
+}
+
+/* Couleurs et styles globaux */
+.navbar-bg {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-border {
+  border-color: rgba(210, 180, 140, 0.2);
+}
+
+/* Couleurs pour le bouton de langue */
+.language-button-border {
+  border-color: rgba(210, 180, 140, 0.3);
+}
+
+.language-button-text {
+  color: var(--warm-main);
+}
+
+/* Effet élégant pour les liens actifs */
+.text-tan-400 {
+  color: var(--warm-main);
+}
+
+.glow-subtle {
+  text-shadow: 0 0 5px rgba(210, 180, 140, 0.3),
+    0 0 10px rgba(210, 180, 140, 0.2);
+  transition: text-shadow 0.3s ease;
+}
+
+/* Effet élégant pour le bouton de langue */
+.shadow-tan-glow {
+  box-shadow: 0 0 10px rgba(210, 180, 140, 0.3),
+    0 0 20px rgba(210, 180, 140, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-tan-subtle {
+  box-shadow: 0 0 10px rgba(210, 180, 140, 0.2);
+}
+
+/* Effet hover pour les liens de navigation */
+a:hover {
+  color: var(--warm-main);
+  text-shadow: 0 0 8px rgba(210, 180, 140, 0.4),
+    0 0 15px rgba(210, 180, 140, 0.2);
+}
+
+/* Effet hover pour le bouton de langue */
+button:hover {
+  box-shadow: 0 0 15px rgba(210, 180, 140, 0.4),
+    0 0 25px rgba(210, 180, 140, 0.2);
+}

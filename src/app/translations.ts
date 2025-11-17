@@ -92,7 +92,7 @@ export const translations = {
           title: "Learning App - Japonais",
           description:
             "Application d’apprentissage du japonais avec flashcards et suivi de progression. Stack : React, Next.js et PostgreSQL.",
-          tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
+          tags: ["React", "NestJS", "Next.js", "PostgreSQL", "TypeScript"],
           github: "https://github.com/Fulcrum1/Learning-app",
         },
       ],
@@ -132,7 +132,7 @@ export const translations = {
         "Technical expertise: JavaScript ecosystem (Vue.js, React, Svelte, Next.js), PHP/Laravel, database architecture (MySQL, PostgreSQL). Additional versatility in Java and C# based on project requirements.",
     },
     skills: {
-      title: "COMPÉTENCES",
+      title: "SKILLS",
       items: [
         {
           category: "Frontend",
@@ -189,7 +189,7 @@ export const translations = {
           title: "Learning App - Japanese",
           description:
             "Japanese learning application with flashcards and progress tracking. Stack: React, Next.js, and PostgreSQL.",
-          tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
+          tags: ["React", "NestJS", "Next.js", "PostgreSQL", "TypeScript"],
           github: "https://github.com/Fulcrum1/Learning-app",
         },
       ],
