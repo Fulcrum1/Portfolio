@@ -21,15 +21,14 @@ export default function Contact({ language }: ContactProps) {
         </p>
         <div className="flex flex-wrap gap-4">
           <a 
-            href="mailto:votre.email@example.com"
-            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg 
-                     shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_35px_rgba(0,255,255,0.6)] 
-                     transition-all duration-300 transform hover:scale-105"
+            href="mailto:guillaume.trapet21@gmail.com"
+            className="px-6 py-3 border-2 border-purple-500 text-purple-400 font-bold rounded-lg 
+                     hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300"
           >
             {t.contact.email}
           </a>
           <a 
-            href="https://github.com/votreprofil"
+            href="https://github.com/Fulcrum1"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg 
@@ -38,13 +37,22 @@ export default function Contact({ language }: ContactProps) {
             {t.contact.github}
           </a>
           <a 
-            href="https://linkedin.com/in/votreprofil"
+            href="https://www.linkedin.com/in/guillaume-trapet-831023207"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 border-2 border-purple-500 text-purple-400 font-bold rounded-lg 
                      hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300"
           >
             {t.contact.linkedin}
+          </a>
+          <a 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg 
+                     hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] transition-all duration-300 cursor-pointer"
+            onClick={() => window.open('https://guillaumetrapet.com/Resume.pdf', '_blank')}
+          >
+            {t.contact.resume}
           </a>
         </div>
       </div>

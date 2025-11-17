@@ -18,39 +18,10 @@ export const translations = {
     about: {
       title: "À PROPOS",
       text1:
-        "Développeur informatique avec une expérience en développement d'applications, gestion de projets, et travail en équipe.",
-      text2: "Compétences en JavaScript, PHP, HTML/CSS, Java et C#.",
+        "Développeur full-stack spécialisé dans la création d'applications métier performantes. J'aide les entreprises à digitaliser leurs processus en construisant des solutions sur mesure, maintenables et évolutives.",
+      text2:
+        "Expertise technique : écosystème JavaScript (Vue.js, React, Svelte, Next.js), PHP/Laravel, architecture de bases de données (MySQL, PostgreSQL). Polyvalence sur Java et C# selon les besoins projets.",
     },
-    // skills: {
-    //   title: "COMPÉTENCES",
-    //   items: [
-    //     {
-    //       category: "Frontend",
-    //       skills: ["Vue.js", "Svelte", "React", "Next.js", "TypeScript"],
-    //     },
-    //     {
-    //       category: "Backend",
-    //       skills: ["Node.js", "PHP", "Laravel", "API REST"],
-    //     },
-    //     {
-    //       category: "Backend",
-    //       skills: ["Node.js", "PHP", "PostgreSQL", "API REST"],
-    //     },
-    //     { category: "DevOps", skills: ["Docker", "Git", "CI/CD", "Cloud"] },
-    //     {
-    //       category: "Design",
-    //       skills: ["UI/UX", "Figma", "Responsive", "Animations"],
-    //     },
-    //     {
-    //       category: "Outils",
-    //       skills: ["VS Code", "Postman", "Linux", "Agile"],
-    //     },
-    //     {
-    //       category: "Soft Skills",
-    //       skills: ["Créativité", "Rigueur", "Collaboration", "Curiosité"],
-    //     },
-    //   ],
-    // },
     skills: {
       title: "COMPÉTENCES",
       items: [
@@ -69,7 +40,6 @@ export const translations = {
           category: "Backend",
           skills: ["Node.js", "PHP (Laravel)", "MySQL", "PostgreSQL"],
         },
-        // {
         {
           category: "Soft Skills",
           skills: [
@@ -120,6 +90,7 @@ export const translations = {
           description:
             "Application d’apprentissage du japonais avec flashcards et suivi de progression. Stack : React, Next.js et PostgreSQL.",
           tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
+          github: "https://github.com/Fulcrum1/Learning-app",
         },
       ],
     },
@@ -129,6 +100,7 @@ export const translations = {
       email: "Email",
       github: "GitHub",
       linkedin: "LinkedIn",
+      resume: "CV",
     },
     footer: {
       rights: "Tous droits réservés",
@@ -152,8 +124,9 @@ export const translations = {
     about: {
       title: "ABOUT",
       text1:
-        "Computer developer with experience in application development, project management, and teamwork.",
-      text2: "Skills in JavaScript, PHP, HTML/CSS, Java, C#, and databases.",
+        "Full-stack developer specializing in creating performant business applications. I help companies digitalize their workflows by building custom, maintainable, and scalable solutions.",
+      text2:
+        "Technical expertise: JavaScript ecosystem (Vue.js, React, Svelte, Next.js), PHP/Laravel, database architecture (MySQL, PostgreSQL). Additional versatility in Java and C# based on project requirements.",
     },
     skills: {
       title: "COMPÉTENCES",
@@ -211,6 +184,7 @@ export const translations = {
           description:
             "Japanese learning application with flashcards and progress tracking. Stack: React, Next.js, and PostgreSQL.",
           tags: ["React", "Next.js", "PostgreSQL", "TypeScript"],
+          github: "https://github.com/Fulcrum1/Learning-app",
         },
       ],
     },
@@ -220,6 +194,7 @@ export const translations = {
       email: "Email",
       github: "GitHub",
       linkedin: "LinkedIn",
+      resume: "Resume",
     },
     footer: {
       rights: "All rights reserved",
