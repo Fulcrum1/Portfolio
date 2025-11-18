@@ -19,7 +19,7 @@ export default function Navbar({
   const navItems = [
     { id: "home", label: t.nav.home },
     { id: "about", label: t.nav.about },
-    { id: "skills", label: t.nav.skills },
+    // { id: "skills", label: t.nav.skills },
     { id: "projects", label: t.nav.projects },
     { id: "contact", label: t.nav.contact },
   ];

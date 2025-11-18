@@ -3,12 +3,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext({
-  theme: "cyberpunk",
+  theme: "modern",
   toggleTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState("cyberpunk");
+  const [theme, setTheme] = useState("modern");
 
   // Charger le thème sauvegardé
   useEffect(() => {

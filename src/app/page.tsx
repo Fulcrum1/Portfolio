@@ -64,7 +64,7 @@ export default function Home() {
       <div className="relative max-w-6xl mx-auto px-6 pb-12 md:pb-20">
         <Hero language={language} />
         <About language={language} />
-        <Skills language={language} />
+        {/* <Skills language={language} /> */}
         <Projects language={language} />
         <Contact language={language} />
         <Footer language={language} />
