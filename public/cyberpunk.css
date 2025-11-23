@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(135deg, #0a0a0f 0%, #14050f 50%, #0a0a14 100%);
-  color: var(--foreground);
+  color: white;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
