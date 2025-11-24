@@ -16,7 +16,7 @@ export default function Projects({ language }: { language: Language }) {
           </div>
           <div className="flex-1 space-y-12">
             {t.home.projects.items.map((project, index) => (
-              <div className="card rounded-xl p-8 transition-all duration-300">
+              <div className="card rounded-xl p-8 transition-all duration-300" key={index}>
                 <div key={index} className="scroll-mt-8">
                   <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
                     <span>{project.title}</span>

@@ -16,7 +16,7 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export default function Experience({ language }: { language: Language }) {
     const [activeStep, setActiveStep] = React.useState(1);
-    const experienceRefs = React.useRef<HTMLDivElement[]>([]);
+    const experienceRefs = React.useRef<HTMLDivElement[]>([]) ;
 
     const t = translations[language];
 
@@ -100,7 +100,11 @@ export default function Experience({ language }: { language: Language }) {
                         {t.portfolio.experiences.map((exp, index) => (
                             <div
                                 key={index}
-                                ref={(el) => experienceRefs.current[index] = el}
+                                ref={(el) => {
+                                    if (el) {
+                                        experienceRefs.current[index] = el;
+                                    }
+                                }}
                                 className="scroll-mt-8"
                             >
                                 <div

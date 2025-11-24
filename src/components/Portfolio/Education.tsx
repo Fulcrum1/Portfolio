@@ -13,7 +13,7 @@ export default function Education({ language }: { language: Language }) {
           </div>
           <div className="flex-1 space-y-12">
             {t.portfolio.formations.map((form, index) => (
-              <div className="card rounded-xl p-8 transition-all duration-300">
+              <div className="card rounded-xl p-8 transition-all duration-300" key={index}>
                 <div key={index} className="scroll-mt-8">
                   <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
                     <span>{form.diploma}</span>
