@@ -119,6 +119,7 @@ export const translations = {
           role: "CDI - Développeur Fullstack",
           description:
             "Développement d'applications web sur mesure pour la gestion de données (CSE, CRM, gestion du temps).",
+          mission:[],
           tech: [
             "Vue.js",
             "Laravel",
@@ -136,6 +137,7 @@ export const translations = {
             "Plateforme de gestion du Comité Social et Économique (CSE) : tableau de bord, gestion des stocks et des commandes.",
             "Outil de gestion du temps et des congés pour les RH.",
           ],
+          skills: [],
         },
         {
           period: "Avril - Juin 2021",
@@ -150,6 +152,9 @@ export const translations = {
             "Autonomie dans la prise en charge des tâches et la résolution de problèmes techniques.",
             "Collaboration avec l'équipe pour assurer une transition fluide vers la nouvelle bibliothèque.",
           ],
+          tech: [],
+          tasks: [],
+          projects: [],
         },
         {
           period: "Juin - Août 2018 à 2022",
@@ -333,6 +338,7 @@ export const translations = {
           role: "Permanent Contract - Fullstack Developer",
           description:
             "Development of custom web applications for data management (CSE, CRM, time management).",
+          mission:[],
           tech: [
             "Vue.js",
             "Laravel",
@@ -350,6 +356,7 @@ export const translations = {
             "Social and Economic Committee (CSE) management platform: dashboard, stock, and order management.",
             "Time and leave management tool for HR.",
           ],
+          skills: [],
         },
         {
           period: "April - June 2021",
@@ -364,6 +371,9 @@ export const translations = {
             "Autonomy in task management and technical problem-solving.",
             "Collaboration with the team to ensure a smooth transition to the new library.",
           ],
+          tech: [],
+          tasks: [],
+          projects: [],
         },
         {
           period: "June - August 2018 to 2022",

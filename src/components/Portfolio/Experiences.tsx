@@ -14,6 +14,16 @@ import { Check } from 'lucide-react';
 import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
+interface Experience {
+    period: string;
+    company: string;
+    role: string;
+    description: string;
+    tech?: string[];
+    tasks?: string[];
+    projects?: string[];
+}
+
 export default function Experience({ language }: { language: Language }) {
     const [activeStep, setActiveStep] = React.useState(1);
     const experienceRefs = React.useRef<HTMLDivElement[]>([]) ;
