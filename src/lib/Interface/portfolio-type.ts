@@ -7,6 +7,8 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
+  type: string;
+  link?: { title: string; url: string };
   github?: string;
 }
 
@@ -15,6 +17,7 @@ interface Formation {
   school: string;
   location: string;
   period: string;
+  details: string[];
 }
 
 interface Experience {
@@ -23,10 +26,9 @@ interface Experience {
   role: string;
   description: string;
   tech?: string[];
-  tasks?: string[];
-  projects?: string[];
+  tasks?: { label: string; items: string[] };
   mission?: string;
-  skills?: string[];
+  skills?: { label: string; items: string[] };
 }
 
 export type { Skill, Project, Formation, Experience };

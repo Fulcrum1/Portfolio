@@ -22,7 +22,7 @@ export default function Portfolio() {
     <div className="flex flex-col gap-4">
       <Experiences experiences={experiences} />
       <Education formations={formations} />
-      <Projects projects={projects} />
+      {/* <Projects projects={projects} /> */}
       <Skills skills={skills} />
     </div>
   );

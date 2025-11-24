@@ -48,6 +48,7 @@ export default function Experiences({ experiences }: { experiences: Experience[]
       block: "center",
     });
   };
+  const tagColors = ["tag-main", "tag-secondary"];
 
   return (
     <div className="text-white p-8 pt-20 min-h-screen">
@@ -138,22 +139,6 @@ export default function Experiences({ experiences }: { experiences: Experience[]
                   {/* Description */}
                   <p className="hero-text text-lg mb-6">{exp.description}</p>
 
-                  {/* Tech Stack */}
-                  {exp.tech && (
-                    <div
-                      className="mb-6 p-4 rounded-lg"
-                      style={{
-                        backgroundColor: "var(--warm-background)",
-                        border: "1px solid var(--warm-border)",
-                      }}
-                    >
-                      <span className="text-sm font-semibold main-color">
-                        Stack technique :{" "}
-                      </span>
-                      <span className="text-sm hero-text">{exp.tech}</span>
-                    </div>
-                  )}
-
                   {/* Mission */}
                   {exp.mission && (
                     <div
@@ -173,22 +158,13 @@ export default function Experiences({ experiences }: { experiences: Experience[]
                   {/* Tasks */}
                   {exp.tasks && (
                     <div className="mb-6">
-                      {exp.tasks.map((task, idx) => (
+                      <p className="text-base font-semibold main-color glow-subtle">
+                        {exp.tasks.label}
+                      </p>
+                      {exp.tasks.items.map((task, idx) => (
                         <p key={idx} className="hero-text mb-2">
                           • {task}
                         </p>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Projects */}
-                  {exp.projects && (
-                    <div className="ml-4 space-y-3 mb-6">
-                      {exp.projects.map((project, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="animated-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="hero-text">{project}</p>
-                        </div>
                       ))}
                     </div>
                   )}
@@ -197,9 +173,9 @@ export default function Experiences({ experiences }: { experiences: Experience[]
                   {exp.skills && (
                     <div className="space-y-3">
                       <p className="text-base font-semibold main-color glow-subtle">
-                        Compétences développées :
+                        {exp.skills.label}
                       </p>
-                      {exp.skills.map((skill, idx) => (
+                      {exp.skills.items.map((skill, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <div className="animated-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"></div>
                           <p className="hero-text">{skill}</p>

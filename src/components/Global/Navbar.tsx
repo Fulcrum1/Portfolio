@@ -80,9 +80,7 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
           <ThemeButton />
         </div>
         <nav
-          className={`z-1 rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 flex justify-center backdrop-blur-md navbar-bg border navbar-border shadow-lg w-full mx-auto ${
-            language === "fr" ? "sm:w-145" : "sm:w-124"
-          }`}
+          className={`z-1 rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 flex justify-center backdrop-blur-md navbar-bg border navbar-border shadow-lg w-full mx-auto sm:w-150`}
         >
           <div className="w-full px-4 py-2">
             <div className="flex items-start justify-center gap-2">
@@ -95,9 +93,8 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
                     <a
                       href={item.href}
                       onClick={() => setCurrent(item.id)}
-                      className={`font-mono text-xs md:text-sm transition-all duration-300 px-2 py-1 ${
-                        current === item.id ? "main-color glow-subtle" : ""
-                      }`}
+                      className={`font-mono text-xs md:text-sm transition-all duration-300 px-2 py-1 ${current === item.id ? "main-color glow-subtle" : ""
+                        }`}
                     >
                       {item.label}
                     </a>

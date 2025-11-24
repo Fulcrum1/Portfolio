@@ -1,4 +1,4 @@
-import { Project } from "@/lib/Interface/portfolio-type"; 
+import { Project } from "@/lib/Interface/portfolio-type";
 
 export default function Projects({ projects }: { projects: Project[] }) {
   const tagColors = ["tag-main", "tag-secondary"];
@@ -18,17 +18,19 @@ export default function Projects({ projects }: { projects: Project[] }) {
                 key={index}
               >
                 <div key={index} className="scroll-mt-8">
-                  <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                    <span>{project.title}</span>
-                  </h3>
+                  <div className="flex justify-between gap-3">
+                    <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                      <span>{project.title}</span>
+                    </h3>
+                    <span className="text-sm font-medium text-gray-400">{project.type}</span>
+                  </div>
                   <p className="mb-4 leading-relaxed">{project.description}</p>
 
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 text-sm font-mono border rounded mx-2 ${
-                        tagColors[i % tagColors.length]
-                      }`}
+                      className={`px-3 py-1 text-sm font-mono border rounded mx-2 ${tagColors[i % tagColors.length]
+                        }`}
                     >
                       {tag}
                     </span>
@@ -40,10 +42,9 @@ export default function Projects({ projects }: { projects: Project[] }) {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex gap-2 items-center px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                      aria-label={`Voir le dépôt GitHub du projet ${
-                        project.title || ""
-                      }`}
+                      className="inline-flex gap-2 items-center px-3 py-1.5 text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                      aria-label={`Voir le dépôt GitHub du projet ${project.title || ""
+                        }`}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
