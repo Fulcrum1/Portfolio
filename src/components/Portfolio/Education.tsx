@@ -1,8 +1,7 @@
 import { Calendar, MapPin } from "lucide-react";
-import { Language, translations } from "@/lib/translations";
+import { Formation } from "@/lib/Interface/portfolio-type";
 
-export default function Education({ language }: { language: Language }) {
-  const t = translations[language];
+export default function Education({ formations }: { formations: Formation[] }) {
   return (
     <>
       <div className="text-white p-8 pt-20 ">
@@ -12,7 +11,7 @@ export default function Education({ language }: { language: Language }) {
             <div className="hero-line h-1 w-24"></div>
           </div>
           <div className="flex-1 space-y-12">
-            {t.portfolio.formations.map((form, index) => (
+            {formations.map((form, index) => (
               <div className="card rounded-xl p-8 transition-all duration-300" key={index}>
                 <div key={index} className="scroll-mt-8">
                   <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
