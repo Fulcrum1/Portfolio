@@ -1,23 +1,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Language } from './translations';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Hero from '@/components/Home/Hero';
+import About from '@/components/Home/About';
+import Projects from '@/components/Home/Projects';
+import Contact from '@/components/Home/Contact';
+import Footer from '@/components/Home/Footer';
+import { useLanguage } from "@/components/Global/Navbar";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
-  const [language, setLanguage] = useState<Language>('en');
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'fr' : 'en');
-  };
-
+  const { language } = useLanguage();
+  
   // Animation au scroll
   useEffect(() => {
     const observerOptions = {
@@ -54,17 +48,10 @@ export default function Home() {
         className="fixed inset-0 opacity-10 pointer-events-none cyber-background modern-background"
       />
 
-      <Navbar 
-        activeSection={activeSection}
-        language={language}
-        onLanguageToggle={toggleLanguage}
-      />
-
       {/* Main content */}
       <div className="relative max-w-6xl mx-auto px-6 pb-12 md:pb-20">
         <Hero language={language} />
         <About language={language} />
-        {/* <Skills language={language} /> */}
         <Projects language={language} />
         <Contact language={language} />
         <Footer language={language} />

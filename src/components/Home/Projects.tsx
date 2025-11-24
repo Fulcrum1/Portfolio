@@ -1,5 +1,5 @@
-import { Language, translations } from "../translations";
-import Title from "./Global/title";
+import { Language, translations } from "@/lib/translations";
+import Title from "../Global/title";
 
 interface ProjectsProps {
   language: Language;
@@ -15,10 +15,10 @@ export default function Projects({ language }: ProjectsProps) {
 
   return (
     <section id="projects" className="mb-20 scroll-mt-24">
-      <Title>{t.projects.title}</Title>
+      <Title>{t.home.projects.title}</Title>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {t.projects.items.map((project, idx) => (
+        {t.home.projects.items.map((project, idx) => (
           <div
             key={idx}
             className="card rounded-lg p-6 group cursor-pointer animate-on-scroll hover:scale-[1.02] transition-all"

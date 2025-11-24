@@ -1,5 +1,5 @@
-import { Language, translations } from "../translations";
-import Title from "./Global/title";
+import { Language, translations } from "@/lib/translations";
+import Title from "../Global/title";
 interface ContactProps {
   language: Language;
 }
@@ -9,9 +9,9 @@ export default function Contact({ language }: ContactProps) {
 
   return (
     <section id="contact" className="mb-20 scroll-mt-24">
-      <Title>{t.contact.title}</Title>
+      <Title>{t.home.contact.title}</Title>
       <div className="card rounded-lg p-8 animate-fade-right">
-        <p className="text-gray-300 mb-6 text-lg">{t.contact.text}</p>
+        <p className="text-gray-300 mb-6 text-lg">{t.home.contact.text}</p>
         <div className="flex flex-wrap gap-4">
           <a
             href="mailto:guillaume.trapet21@gmail.com"
@@ -19,7 +19,7 @@ export default function Contact({ language }: ContactProps) {
             //          hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300"
             className="px-6 py-3 border-2 font-bold rounded-lg contact-main-link"
           >
-            {t.contact.email}
+            {t.home.contact.email}
           </a>
           <a
             href="https://github.com/Fulcrum1"
@@ -29,7 +29,7 @@ export default function Contact({ language }: ContactProps) {
             //          hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] transition-all duration-300"
             className="px-6 py-3 border-2 font-bold rounded-lg contact-secondary-link"
           >
-            {t.contact.github}
+            {t.home.contact.github}
           </a>
           <a
             href="https://www.linkedin.com/in/guillaume-trapet-831023207"
@@ -39,7 +39,7 @@ export default function Contact({ language }: ContactProps) {
             //          hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(189,0,255,0.3)] transition-all duration-300"
             className="px-6 py-3 border-2 font-bold rounded-lg contact-main-link"
           >
-            {t.contact.linkedin}
+            {t.home.contact.linkedin}
           </a>
           <a
             target="_blank"
@@ -54,7 +54,7 @@ export default function Contact({ language }: ContactProps) {
               )
             }
           >
-            {t.contact.resume}
+            {t.home.contact.resume}
           </a>
         </div>
       </div>

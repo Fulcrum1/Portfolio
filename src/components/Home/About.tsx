@@ -1,5 +1,5 @@
-import { Language, translations } from "../translations";
-import Title from "./Global/title";
+import { Language, translations } from "@/lib/translations";
+import Title from "../Global/title";
 interface AboutProps {
   language: Language;
 }
@@ -9,7 +9,7 @@ export default function About({ language }: AboutProps) {
 
   return (
     <section id="about" className="mb-20 scroll-mt-24">
-      <Title>{t.about.title}</Title>
+      <Title>{t.home.about.title}</Title>
       <div className="card rounded-lg p-8 md:p-10 animate-fade-right relative overflow-hidden group">
         <div className="absolute inset-0 " />
 
@@ -20,7 +20,7 @@ export default function About({ language }: AboutProps) {
             <div className="flex-shrink-0 mt-1">
               <div className="w-2 h-2 rounded-full animated-dot" />
             </div>
-            <p className=" leading-relaxed text-lg">{t.about.text1}</p>
+            <p className=" leading-relaxed text-lg">{t.home.about.text1}</p>
           </div>
 
           <div className="h-px about-line" />
@@ -36,7 +36,7 @@ export default function About({ language }: AboutProps) {
               <p className="text-sm font-mono mb-3 uppercase tracking-wider">
                 Stack Technique
               </p>
-              <p className="leading-relaxed">{t.about.text2}</p>
+              <p className="leading-relaxed">{t.home.about.text2}</p>
             </div>
           </div>
         </div>

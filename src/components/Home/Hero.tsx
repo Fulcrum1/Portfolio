@@ -1,13 +1,5 @@
 import React from "react";
-import { Language, translations } from "../translations";
-
-interface Translations {
-  hero: {
-    name: string;
-    role: string;
-    description: string;
-  };
-}
+import { Language, translations } from "@/lib/translations";
 
 interface HeroProps {
   language?: Language;
@@ -28,13 +20,13 @@ export default function Hero({ language = "fr" }: HeroProps) {
               <div className="hero-line w-1 h-12 sm:h-16 flex-shrink-0 mt-1 sm:mt-0" />
               <div className="min-w-0">
                 <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 break-words">
-                  {t.hero.name.split(" ")[0]}
+                  {t.home.hero.name.split(" ")[0]}
                   <br className="sm:hidden" />
-                  <span className="sm:ml-3">{t.hero.name.split(" ")[1]}</span>
+                  <span className="sm:ml-3">{t.home.hero.name.split(" ")[1]}</span>
                 </h1>
                 <p className="hero-text text-base text-xl lg:text-2xl font-mono">
                   <span className="inline-block mr-2">{">"}</span>
-                  <span className="inline-block">{t.hero.role}</span>
+                  <span className="inline-block">{t.home.hero.role}</span>
                 </p>
               </div>
             </div>
@@ -42,7 +34,7 @@ export default function Hero({ language = "fr" }: HeroProps) {
 
           <div className="flex-1 lg:max-w-2xl">
             <p className="text-base text-xl leading-relaxed">
-              {t.hero.description}
+              {t.home.hero.description}
             </p>
           </div>
         </div>

@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  compilerOptions: {
+    baseUrl: ".",
+    paths: {
+      "@/lib/translations": ["lib/translations"],
+    },
+  },
 };
 
 export default nextConfig;

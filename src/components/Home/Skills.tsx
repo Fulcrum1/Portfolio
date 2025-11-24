@@ -1,5 +1,5 @@
-import { Language, translations } from "../translations";
-import Title from "./Global/title";
+import { Language, translations } from "@/lib/translations";
+import Title from "../Global/title";
 interface SkillsProps {
   language: Language;
 }
@@ -9,10 +9,10 @@ export default function Skills({ language }: SkillsProps) {
   
   return (
     <section id="skills" className="mb-20 scroll-mt-24">
-      <Title>{t.skills.title}</Title>
+      <Title>{t.home.skills.title}</Title>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {t.skills.items.map((item, idx) => (
+        {t.home.skills.items.map((item, idx) => (
           <div 
             key={idx} 
             className={`card rounded-lg p-5 animate-scale `}

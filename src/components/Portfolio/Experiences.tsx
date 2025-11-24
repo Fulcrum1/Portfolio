@@ -5,55 +5,20 @@ import {
     StepperIndicator,
     StepperItem,
     StepperNav,
-    StepperPanel,
     StepperSeparator,
     StepperTrigger,
 } from "@/components/ui/stepper";
-
+import { Language, translations } from "@/lib/translations";
 import { Check } from 'lucide-react';
 
 import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
-export default function Experience() {
+export default function Experience({ language }: { language: Language }) {
     const [activeStep, setActiveStep] = React.useState(1);
     const experienceRefs = React.useRef<HTMLDivElement[]>([]);
 
-    const experiences = [
-        {
-            period: "2022 - en cours",
-            company: "Infofil - Genlis",
-            role: "CDI - Développeur Fullstack",
-            description: "Développement d'applications web sur mesure pour la gestion de données (CSE, CRM, gestion du temps).",
-            tech: "Vue.js, Laravel, React, Next.js, Svelte, MySQL, PostgreSQL",
-            tasks: [
-                "Déploiement et maintenance : Mise en production, configuration des serveurs, gestion des mises à jour et optimisation des performances.",
-                "Réalisations clés :"
-            ],
-            projects: [
-                "Plateforme de gestion du Comité Social et Économique (CSE) : tableau de bord, gestion des stocks et des commandes.",
-                "Outil de gestion du temps et des congés pour les RH."
-            ]
-        },
-        {
-            period: "Avril - Juin 2021",
-            company: "Corcelles-lès-Cîteaux",
-            role: "Stagiaire - Sidel Packing Solution",
-            description: "Stage de 2ème année de DUT : Première expérience professionnelle en développement.",
-            mission: "Remplacement d'une bibliothèque PHP et réalisation de tests pour préparer le changement de celle-ci.",
-            skills: [
-                "Analyse comparative : Établissement d'une méthodologie pour lister et évaluer les fonctionnalités des différentes bibliothèques.",
-                "Autonomie dans la prise en charge des tâches et la résolution de problèmes techniques.",
-                "Collaboration avec l'équipe pour assurer une transition fluide vers la nouvelle bibliothèque."
-            ]
-        },
-        {
-            period: "Juin - Août 2018 à 2022",
-            company: "Côte d'or",
-            role: "Saisonnier",
-            description: "Travail de la vigne estivale dans plusieurs domaines : Digioia Royer et Mugneret Gibourg."
-        }
-    ];
+    const t = translations[language];
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -109,7 +74,7 @@ export default function Experience() {
                                 }}
                             >
                                 <StepperNav className="flex flex-col gap-0">
-                                    {experiences.map((_, index) => (
+                                    {t.portfolio.experiences.map((_, index) => (
                                         <StepperItem key={index + 1} step={index + 1} className="flex flex-col items-center">
                                             <StepperTrigger>
                                                 <StepperIndicator
@@ -118,7 +83,7 @@ export default function Experience() {
                                                     {index + 1}
                                                 </StepperIndicator>
                                             </StepperTrigger>
-                                            {index < experiences.length - 1 && (
+                                            {index < t.portfolio.experiences.length - 1 && (
                                                 <StepperSeparator
                                                     className="h-24 w-0.5 transition-all duration-300"
                                                 />
@@ -132,7 +97,7 @@ export default function Experience() {
 
                     {/* Experience Content - Liste complète */}
                     <div className="flex-1 space-y-12">
-                        {experiences.map((exp, index) => (
+                        {t.portfolio.experiences.map((exp, index) => (
                             <div
                                 key={index}
                                 ref={(el) => experienceRefs.current[index] = el}
