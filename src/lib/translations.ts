@@ -226,9 +226,9 @@ export const translations = {
         { label: "Node.js", url: "node-js" },
         { label: "MySQL", url: "mysql" },
         { label: "PostgreSQL", url: "postgresql" },
-        { label: "git", url: "git" },
-        { label: "github", url: "github" },
-        { label: "docker", url: "docker" },
+        { label: "Git", url: "git" },
+        { label: "GitHub", url: "github" },
+        { label: "Docker", url: "docker" },
       ],
 
       formations: [
@@ -480,9 +480,9 @@ export const translations = {
         { label: "Node.js", url: "node-js" },
         { label: "MySQL", url: "mysql" },
         { label: "PostgreSQL", url: "postgresql" },
-        { label: "git", url: "git" },
-        { label: "github", url: "github" },
-        { label: "docker", url: "docker" },
+        { label: "Git", url: "git" },
+        { label: "GitHub", url: "github" },
+        { label: "Docker", url: "docker" },
       ],
       formations: [
         {

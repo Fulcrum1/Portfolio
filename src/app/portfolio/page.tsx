@@ -22,11 +22,21 @@ export default function Portfolio() {
   const skills = t.portfolio.skills as unknown as Skill[];
 
   return (
-    <div className="flex flex-col gap-4">
-      <Experiences title={titles.experience} experiences={experiences} />
-      <Education title={titles.education} formations={formations} />
-      {/* <Projects projects={projects} /> */}
-      <Skills title={titles.skills} skills={skills} language={language} />
+    <div className="min-h-screen relative">
+
+      <div className="scanline" />
+
+      {/* Grid background overlay */}
+      <div
+        className="fixed inset-0 opacity-10 pointer-events-none cyber-background modern-background"
+      />
+
+      <div className="flex flex-col gap-4">
+        <Experiences title={titles.experience} experiences={experiences} />
+        <Education title={titles.education} formations={formations} />
+        {/* <Projects projects={projects} /> */}
+        <Skills title={titles.skills} skills={skills} language={language} />
+      </div>
     </div>
   );
 }

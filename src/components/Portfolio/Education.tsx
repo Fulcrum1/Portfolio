@@ -51,44 +51,13 @@ export default function Education({ title, formations }: { title: string; format
     <>
       <div className="text-white p-8 pt-20 ">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-5xl font-bold mb-2">{title}</h2>
+          <div className="mb-8">
+            <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent">
+              {title}
+            </h2>
             <div className="hero-line h-1 w-24"></div>
           </div>
           <div className="flex gap-8 relative">
-            {/* Stepper Navigation - Vertical à gauche */}
-            <div className="w-24 flex-shrink-0">
-              <div className="sticky top-8">
-                <Stepper
-                  value={activeStep}
-                  onValueChange={(value) => scrollToFormation(value - 1)}
-                  orientation="vertical"
-                  indicators={{
-                    completed: <Check className="size-4" />,
-                  }}
-                >
-                  <StepperNav className="flex flex-col gap-0">
-                    {formations.map((_, index) => (
-                      <StepperItem
-                        key={index + 1}
-                        step={index + 1}
-                        className="flex flex-col items-center"
-                      >
-                        <StepperTrigger>
-                          <StepperIndicator className="w-12 h-12 text-lg font-bold rounded-full flex items-center justify-center transition-all duration-300">
-                            {index + 1}
-                          </StepperIndicator>
-                        </StepperTrigger>
-                        {index < formations.length - 1 && (
-                          <StepperSeparator className="h-24 w-0.5 transition-all duration-300" />
-                        )}
-                      </StepperItem>
-                    ))}
-                  </StepperNav>
-                </Stepper>
-              </div>
-            </div>
-
             <div className="flex-1 space-y-12">
               {formations.map((form, index) => (
                 <div
@@ -123,7 +92,7 @@ export default function Education({ title, formations }: { title: string; format
                         <MapPin className="w-5 h-5" />
                         {form.location} - {form.school}
                       </div>
-                      <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                      <h3 className="text-3xl font-bold mb-6 flex items-center gap-3 portfolio-title">
                         <span>{form.diploma}</span>
                       </h3>
                       <div className="mb-6">
@@ -135,6 +104,38 @@ export default function Education({ title, formations }: { title: string; format
                   </div>
                 </div>
               ))}
+            </div>
+            {/* Stepper Navigation - Vertical à gauche */}
+            <div className="hidden md:block w-24 flex-shrink-0">
+              <div className="sticky top-8">
+                <Stepper
+                  value={activeStep}
+                  onValueChange={(value) => scrollToFormation(value - 1)}
+                  orientation="vertical"
+                  indicators={{
+                    completed: <Check className="size-4" />,
+                  }}
+                >
+                  <StepperNav className="flex flex-col gap-0">
+                    {formations.map((_, index) => (
+                      <StepperItem
+                        key={index + 1}
+                        step={index + 1}
+                        className="flex flex-col items-center"
+                      >
+                        <StepperTrigger>
+                          <StepperIndicator className="w-12 h-12 text-lg font-bold rounded-full flex items-center justify-center transition-all duration-300">
+                            {index + 1}
+                          </StepperIndicator>
+                        </StepperTrigger>
+                        {index < formations.length - 1 && (
+                          <StepperSeparator className="h-24 w-0.5 transition-all duration-300" />
+                        )}
+                      </StepperItem>
+                    ))}
+                  </StepperNav>
+                </Stepper>
+              </div>
             </div>
           </div>
         </div>

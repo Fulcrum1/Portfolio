@@ -51,17 +51,19 @@ export default function Experiences({ title, experiences }: { title: string; exp
   const tagColors = ["tag-main", "tag-secondary"];
 
   return (
-    <div className="text-white p-8 pt-20 min-h-screen">
+    <div className="text-white p-8 pt-30 md:pt-20 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-5xl font-bold mb-2">{title}</h2>
+        <div className="mb-8">
+          <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent">
+            {title}
+          </h2>
           <div className="hero-line h-1 w-24"></div>
         </div>
 
         <div className="flex gap-8 relative">
           {/* Stepper Navigation - Vertical à gauche */}
-          <div className="w-24 flex-shrink-0">
+          <div className="hidden md:block flex-shrink-0 w-24">
             <div className="sticky top-8">
               <Stepper
                 value={activeStep}
@@ -131,7 +133,7 @@ export default function Experiences({ title, experiences }: { title: string; exp
                   </div>
 
                   {/* Role */}
-                  <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  <h3 className="text-3xl font-bold mb-6 flex items-center gap-3 portfolio-title">
                     <Briefcase className="w-7 h-7 main-color" />
                     <span>{exp.role}</span>
                   </h3>
@@ -151,7 +153,7 @@ export default function Experiences({ title, experiences }: { title: string; exp
                       <span className="text-sm font-semibold main-color">
                         Mission principale :{" "}
                       </span>
-                      <span className="text-sm hero-text">{exp.mission}</span>
+                      <span className="text-sm text-white">{exp.mission}</span>
                     </div>
                   )}
 
@@ -162,7 +164,7 @@ export default function Experiences({ title, experiences }: { title: string; exp
                         {exp.tasks.label}
                       </p>
                       {exp.tasks.items.map((task, idx) => (
-                        <p key={idx} className="hero-text mb-2">
+                        <p key={idx} className="text-white mb-2">
                           • {task}
                         </p>
                       ))}
@@ -178,7 +180,7 @@ export default function Experiences({ title, experiences }: { title: string; exp
                       {exp.skills.items.map((skill, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <div className="animated-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="hero-text">{skill}</p>
+                          <p className="text-white">{skill}</p>
                         </div>
                       ))}
                     </div>

@@ -334,7 +334,7 @@ h2 span {
   color: var(--cyber-secondary);
 }
 
-.h3-projects {
+.h3-projects, .portfolio-title {
   color: var(--cyber-secondary);
   margin-bottom: 0.75rem;
 }
@@ -388,7 +388,7 @@ li span {
 .hero-line {
   background: linear-gradient(
     180deg,
-    var(--cyber-main) 0%,
+    /* var(--cyber-main) 0%, */
     var(--cyber-secondary) 100%
   );
   border-radius: 9999px;
