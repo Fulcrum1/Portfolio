@@ -15,7 +15,7 @@ import React from "react";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { Experience } from "@/lib/Interface/portfolio-type";
 
-export default function Experiences({ experiences }: { experiences: Experience[] }) {
+export default function Experiences({ title, experiences }: { title: string; experiences: Experience[] }) {
   const [activeStep, setActiveStep] = React.useState(1);
   const experienceRefs = React.useRef<HTMLDivElement[]>([]);
 
@@ -55,7 +55,7 @@ export default function Experiences({ experiences }: { experiences: Experience[]
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-5xl font-bold mb-2">Expérience</h2>
+          <h2 className="text-5xl font-bold mb-2">{title}</h2>
           <div className="hero-line h-1 w-24"></div>
         </div>
 

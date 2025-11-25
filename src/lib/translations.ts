@@ -112,6 +112,11 @@ export const translations = {
       },
     },
     portfolio: {
+      titles: {
+        experience: "Expériences",
+        skills: "Stack technique",
+        education: "Formations",
+      },
       experiences: [
         {
           period: "2022 - en cours",
@@ -358,6 +363,11 @@ export const translations = {
       },
     },
     portfolio: {
+      titles: {
+        experience: "Experiences",
+        skills: "Tech Stack",
+        education: "Formations",
+      },
       experiences: [
         {
           period: "2022 - Present",

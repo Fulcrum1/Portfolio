@@ -5,15 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Language } from "@/lib/translations";
 
 export default function Skills({
+  title,
   skills,
   language,
 }: {
+  title: string;
   skills: Skill[];
   language: Language;
 }) {
   const [fixed, setFixed] = useState(false);
   const logosRef = useRef<HTMLDivElement>(null);
-  console.log(language);
+  
   useEffect(() => {
     if (logosRef.current && !fixed) {
       // Nettoyer les clones existants
@@ -40,7 +42,7 @@ export default function Skills({
         <div className="flex justify-between mb-8 max-w-7xl mx-auto">
           <div>
             <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent">
-              Tech Stack
+              {title}
             </h2>
             <div className="hero-line h-1 w-24"></div>
           </div>

@@ -12,7 +12,7 @@ import { Calendar, Check, MapPin } from "lucide-react";
 import { Formation } from "@/lib/Interface/portfolio-type";
 import React from "react";
 
-export default function Education({ formations }: { formations: Formation[] }) {
+export default function Education({ title, formations }: { title: string; formations: Formation[] }) {
   const [activeStep, setActiveStep] = React.useState(1);
   const formationRefs = React.useRef<HTMLDivElement[]>([]);
 
@@ -52,7 +52,7 @@ export default function Education({ formations }: { formations: Formation[] }) {
       <div className="text-white p-8 pt-20 ">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-5xl font-bold mb-2">Formations</h2>
+            <h2 className="text-5xl font-bold mb-2">{title}</h2>
             <div className="hero-line h-1 w-24"></div>
           </div>
           <div className="flex gap-8 relative">
