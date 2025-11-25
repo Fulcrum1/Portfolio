@@ -3,6 +3,7 @@ import Experiences from "@/components/Portfolio/Experiences";
 import Projects from "@/components/Portfolio/Projects";
 import Skills from "@/components/Portfolio/Skills";
 import Education from "@/components/Portfolio/Education";
+import "./page.css";
 
 import { useLanguage } from "@/components/Global/Navbar";
 import { translations } from "@/lib/translations";
@@ -23,7 +24,7 @@ export default function Portfolio() {
       <Experiences experiences={experiences} />
       <Education formations={formations} />
       {/* <Projects projects={projects} /> */}
-      <Skills skills={skills} />
+      <Skills skills={skills} language={language} />
     </div>
   );
 }

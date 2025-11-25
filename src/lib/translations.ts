@@ -120,7 +120,8 @@ export const translations = {
           description:
             "Développement d’applications web métier sur mesure, en autonomie comme en équipe, pour améliorer et digitaliser les processus internes des entreprises clientes.",
           tasks: {
-            label: "Tâches", items: [
+            label: "Tâches",
+            items: [
               "Analyse fonctionnelle : recueil des besoins, rédaction de spécifications, propositions techniques.",
               "Développement de fonctionnalités avancées : modules de gestion, dashboards, API REST, automatisations.",
               "Participation à l’architecture logicielle : optimisation, modularisation, bonnes pratiques backend & frontend.",
@@ -140,7 +141,8 @@ export const translations = {
           mission:
             "Migration d’une bibliothèque PHP obsolète vers une alternative moderne, avec garantie de compatibilité.",
           skills: {
-            label: "Compétences obtenues", items: [
+            label: "Compétences obtenues",
+            items: [
               "Analyse comparative technique : documentation, tests et benchmark.",
               "Mise en place d’un environnement de tests automatisés pour sécuriser la migration.",
               "Documentation technique et communication régulière avec l’équipe.",
@@ -153,14 +155,15 @@ export const translations = {
           period: "June - August 2018 to 2022",
           company: "Côte-d'Or",
           role: "Seasonal Worker",
-          description: "Travail saisonnier dans plusieurs domaines viticoles (taille, ébourgeonnage, relevage, etc.).",
+          description:
+            "Travail saisonnier dans plusieurs domaines viticoles (taille, ébourgeonnage, relevage, etc.).",
           skills: {
-            label: "Compétences obtenues", items: [
-              "Ce travail physiquement exigeant m’a appris la discipline, la précision et le maintien d’un haut niveau de qualité sur la durée — des compétences directement transférables au développement logiciel orienté qualité."
+            label: "Compétences obtenues",
+            items: [
+              "Ce travail physiquement exigeant m’a appris la discipline, la précision et le maintien d’un haut niveau de qualité sur la durée — des compétences directement transférables au développement logiciel orienté qualité.",
             ],
           },
-        }
-
+        },
       ],
 
       projects: [
@@ -207,48 +210,45 @@ export const translations = {
       ],
 
       skills: [
-        {
-          category: "Frontend",
-          skills: ["Vue.js", "React", "Svelte", "Next.js", "TypeScript"],
-        },
-        {
-          category: "Backend",
-          skills: ["Laravel", "PHP", "NestJS", "Node.js"],
-        },
-        {
-          category: "Base de données",
-          skills: ["MySQL", "PostgreSQL"],
-        },
-        {
-          category: "DevOps",
-          skills: ["Git", "GitHub", "Docker"],
-        },
+        { label: "Vue.js", url: "vue-js" },
+        { label: "React", url: "react" },
+        { label: "Svelte", url: "svelte" },
+        { label: "Next.js", url: "next-js" },
+        { label: "TypeScript", url: "typescript" },
+        { label: "Laravel", url: "laravel" },
+        { label: "PHP", url: "php" },
+        { label: "NestJS", url: "nestjs" },
+        { label: "Node.js", url: "node-js" },
+        { label: "MySQL", url: "mysql" },
+        { label: "PostgreSQL", url: "postgresql" },
+        { label: "git", url: "git" },
+        { label: "github", url: "github" },
+        { label: "docker", url: "docker" },
       ],
 
       formations: [
         {
-          "period": "2019 - 2022",
-          "diploma": "DUT Informatique (Bac+2)",
-          "school": "Université de Dijon",
-          "location": "Dijon",
-          "details": [
+          period: "2019 - 2022",
+          diploma: "DUT Informatique (Bac+2)",
+          school: "Université de Dijon",
+          location: "Dijon",
+          details: [
             "Formation axée sur le développement logiciel, les systèmes, les réseaux et les bases de données.",
             "Pratique approfondie : architecture logicielle, programmation avancée, tests, cybersécurité et optimisation.",
-            "Réalisation d’un projet tutoré en équipe en suivant une méthodologie agile."
-          ]
+            "Réalisation d’un projet tutoré en équipe en suivant une méthodologie agile.",
+          ],
         },
         {
-          "period": "2017 - 2019",
-          "diploma": "Baccalauréat STI2D – Systèmes d’Information et Numérique",
-          "school": "Lycée Eiffel",
-          "location": "Dijon",
-          "details": [
+          period: "2017 - 2019",
+          diploma: "Baccalauréat STI2D – Systèmes d’Information et Numérique",
+          school: "Lycée Eiffel",
+          location: "Dijon",
+          details: [
             "Acquisition de bases solides en électronique, technologies numériques, développement et modélisation.",
-            "Participation à des projets technologiques collaboratifs favorisant l’autonomie et la créativité."
-          ]
-        }
-      ]
-
+            "Participation à des projets technologiques collaboratifs favorisant l’autonomie et la créativité.",
+          ],
+        },
+      ],
     },
   },
   en: {
@@ -294,11 +294,7 @@ export const translations = {
           },
           {
             category: "Soft Skills",
-            skills: [
-              "Problem-solving",
-              "Adaptability",
-              "Teamwork",
-            ],
+            skills: ["Problem-solving", "Adaptability", "Teamwork"],
           },
         ],
       },
@@ -364,43 +360,53 @@ export const translations = {
     portfolio: {
       experiences: [
         {
-          "period": "2022 - Present",
-          "company": "Infofil - Genlis",
-          "role": "Permanent - Fullstack Developer",
-          "description": "Design and development of tailored business web applications, independently or within a team, to streamline and digitalize internal processes for client companies.",
-          "tasks": {
-            label: "Tasks", items: [
+          period: "2022 - Present",
+          company: "Infofil - Genlis",
+          role: "Permanent - Fullstack Developer",
+          description:
+            "Design and development of tailored business web applications, independently or within a team, to streamline and digitalize internal processes for client companies.",
+          tasks: {
+            label: "Tasks",
+            items: [
               "Functional analysis: requirements gathering, specification writing, and technical proposals.",
               "Development of advanced features: management modules, dashboards, REST APIs, automation tools.",
               "Software architecture contribution: performance optimization, modular design, backend & frontend best practices.",
               "Production deployment: server setup, deployment pipelines, monitoring, incident response.",
               "Agile methodology: short iterations, client interactions, continuous improvement.",
-            ]
-          }
+            ],
+          },
         },
         {
-          "period": "April - June 2021",
-          "company": "Sidel Packing Solution - Corcelles-lès-Cîteaux",
-          "role": "Developer Intern",
-          "description": "Immersion in an international industrial environment to modernize a core software component.",
-          "mission": "Migration of an outdated PHP library to a modern and fully compatible alternative.",
-          "skills": {
-            label: "Skills obtained", items: [
+          period: "April - June 2021",
+          company: "Sidel Packing Solution - Corcelles-lès-Cîteaux",
+          role: "Developer Intern",
+          description:
+            "Immersion in an international industrial environment to modernize a core software component.",
+          mission:
+            "Migration of an outdated PHP library to a modern and fully compatible alternative.",
+          skills: {
+            label: "Skills obtained",
+            items: [
               "Comparative technical analysis: documentation review, testing, and benchmarking.",
               "Creation of an automated testing environment to secure the migration process.",
               "Technical documentation and regular communication with the engineering team.",
-              "Final presentation of the solution and knowledge transfer."
-            ]
-          }
+              "Final presentation of the solution and knowledge transfer.",
+            ],
+          },
         },
         {
           period: "June - August 2018 to 2022",
           company: "Côte-d'Or",
           role: "Seasonal Worker",
-          description: "Seasonal vineyard work across multiple estates (pruning, bud removal, lifting, etc.). ",
-          skills: { label: "Skills obtained", items: ["This physically demanding job developed my discipline, precision, and ability to maintain high standards over long periods—skills directly transferable to quality- focused software development."] }
-        }
-
+          description:
+            "Seasonal vineyard work across multiple estates (pruning, bud removal, lifting, etc.). ",
+          skills: {
+            label: "Skills obtained",
+            items: [
+              "This physically demanding job developed my discipline, precision, and ability to maintain high standards over long periods—skills directly transferable to quality- focused software development.",
+            ],
+          },
+        },
       ],
       projects: [
         {
@@ -433,7 +439,10 @@ export const translations = {
             "Japanese learning application with flashcard system and personalized progress tracking. Developed with React, Next.js, and PostgreSQL.",
           tags: ["React", "NestJS", "Next.js", "PostgreSQL", "TypeScript"],
           type: "Personnal",
-          link: { title: "learning-app.guillaumetrapet.com", url: "https://learning-app.guillaumetrapet.com" },
+          link: {
+            title: "learning-app.guillaumetrapet.com",
+            url: "https://learning-app.guillaumetrapet.com",
+          },
           github: "https://github.com/Fulcrum1/Learning-app",
         },
         {
@@ -442,51 +451,53 @@ export const translations = {
             "Web Portfolio developed with React, Next.js and Tailwind CSS.",
           tags: ["React", "Next.js", "TypeScript"],
           type: "Personnel",
-          link: { title: "guillaumetrapet.com", url: "https://guillaumetrapet.com" },
+          link: {
+            title: "guillaumetrapet.com",
+            url: "https://guillaumetrapet.com",
+          },
           github: "https://github.com/Fulcrum1/Portfolio",
         },
       ],
       skills: [
-        {
-          category: "Frontend",
-          skills: ["Vue.js", "React", "Svelte", "Next.js", "TypeScript"],
-        },
-        {
-          category: "Backend",
-          skills: ["Laravel", "PHP", "NestJS", "Node.js"],
-        },
-        {
-          category: "Database",
-          skills: ["MySQL", "PostgreSQL"],
-        },
-        {
-          category: "DevOps",
-          skills: ["Git", "GitHub", "Docker"],
-        },
+        { label: "Vue.js", url: "vue-js" },
+        { label: "React", url: "react" },
+        { label: "Svelte", url: "svelte" },
+        { label: "Next.js", url: "next-js" },
+        { label: "TypeScript", url: "typescript" },
+        { label: "Laravel", url: "laravel" },
+        { label: "PHP", url: "php" },
+        { label: "NestJS", url: "nestjs" },
+        { label: "Node.js", url: "node-js" },
+        { label: "MySQL", url: "mysql" },
+        { label: "PostgreSQL", url: "postgresql" },
+        { label: "git", url: "git" },
+        { label: "github", url: "github" },
+        { label: "docker", url: "docker" },
       ],
       formations: [
         {
-          "period": "2019 - 2022",
-          "diploma": "Computer Science Degree (2-year technical program)",
-          "school": "University of Dijon",
-          "location": "Dijon, France",
-          "details": [
+          period: "2019 - 2022",
+          diploma: "Computer Science Degree (2-year technical program)",
+          school: "University of Dijon",
+          location: "Dijon, France",
+          details: [
             "Program focused on software development, systems, networks, and databases.",
             "Hands-on experience in software architecture, advanced programming, testing, cybersecurity, and optimization.",
-            "Completed a team-based project following agile methodology."
-          ]
+            "Completed a team-based project following agile methodology.",
+          ],
         },
         {
-          "period": "2017 - 2019",
-          "diploma": "High School Diploma in Industry and Sustainable Development Science and Technology",
-          "school": "Eiffel High School",
-          "location": "Dijon, France",
-          "details": [
+          period: "2017 - 2019",
+          diploma:
+            "High School Diploma in Industry and Sustainable Development Science and Technology",
+          school: "Eiffel High School",
+          location: "Dijon, France",
+          details: [
             "Developed strong foundations in electronics, digital technologies, development, and system modeling.",
-            "Participated in collaborative technological projects fostering autonomy and creativity."
-          ]
-        }
-      ]
+            "Participated in collaborative technological projects fostering autonomy and creativity.",
+          ],
+        },
+      ],
     },
   },
 } as const;

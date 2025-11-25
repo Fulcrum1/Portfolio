@@ -1,7 +1,7 @@
 interface Skill {
-  category: string;
-  skills: string[];
-}
+  label: string;
+  url: string;
+};
 
 interface Project {
   title: string;
