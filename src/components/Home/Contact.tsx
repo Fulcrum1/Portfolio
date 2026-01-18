@@ -46,7 +46,7 @@ export default function Contact({ language }: ContactProps) {
             rel="noopener noreferrer"
             // className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg 
             //          hover:bg-cyan-400/10 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] transition-all duration-300 cursor-pointer"
-            className="px-6 py-3 border-2 font-bold rounded-lg contact-secondary-link"
+            className="px-6 py-3 border-2 font-bold rounded-lg contact-secondary-link cursor-pointer"
             onClick={() =>
               window.open(
                 `https://guillaumetrapet.com/Resume/${language}/Resume.pdf`,
