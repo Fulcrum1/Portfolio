@@ -13,8 +13,6 @@ export default function About({ language }: AboutProps) {
       <div className="card rounded-lg p-8 md:p-10 animate-fade-right relative overflow-hidden group">
         <div className="absolute inset-0 " />
 
-        <div className="absolute left-0 top-0 h-full w-1 left-vertical-line-main" />
-
         <div className="relative space-y-6">
           <div className="flex gap-4">
             <div className="flex-shrink-0 mt-1">

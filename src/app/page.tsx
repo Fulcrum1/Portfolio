@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Hero from '@/components/Home/Hero';
 import About from '@/components/Home/About';
 import Projects from '@/components/Home/Projects';
@@ -9,10 +9,9 @@ import Footer from '@/components/Home/Footer';
 import { useLanguage } from "@/components/Global/Navbar";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('home');
   const { language } = useLanguage();
   
-  // Animation au scroll
+  // Animation au scroll uniquement
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -23,10 +22,6 @@ export default function Home() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          
-          // Update active section for navbar
-          const sectionId = entry.target.id;
-          if (sectionId) setActiveSection(sectionId);
         }
       });
     }, observerOptions);

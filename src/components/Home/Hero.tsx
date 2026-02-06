@@ -13,7 +13,7 @@ export default function Hero({ language = "fr" }: HeroProps) {
       id="home"
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
     >
-      <div className="w-full max-w-6xl">
+      <section id="home" className="w-full max-w-6xl">
         <div className="flex flex-col lg:items-center lg:justify-between gap-8 lg:gap-12">
           <div className="flex-1">
             <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -57,7 +57,7 @@ export default function Hero({ language = "fr" }: HeroProps) {
             </svg>
           </div>
         </div>
-      </div>
+      </section>
     </header>
   );
 }

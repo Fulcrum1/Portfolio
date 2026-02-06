@@ -5,7 +5,7 @@ body {
 }
 
 /* Ambient warm lights */
-body::before {
+/* body::before {
   content: "";
   position: fixed;
   top: -50%;
@@ -25,7 +25,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
   animation: ambientMove 20s ease-in-out infinite;
-}
+} */
 
 .modern-background {
   position: fixed;
