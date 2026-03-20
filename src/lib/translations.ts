@@ -65,8 +65,8 @@ export const translations = {
           },
         ],
       },
-      projects: {
-        title: "PROJETS",
+      professionalProjects: {
+        title: "PROJETS PROFESSIONNELS",
         items: [
           {
             title: "Plateforme CSE",
@@ -90,11 +90,44 @@ export const translations = {
             github: "",
           },
           {
+            title: "Suivi d'état de site",
+            description:
+              "Application de suivi d'état de site avec interface moderne et rapports détaillés. Stack : React, Next.js et Golang.",
+            tags: ["React", "Next.js", "Golang", "TypeScript"],
+            github: "",
+          },
+        ],
+      },
+      personalProjects: {
+        title: "PROJETS PERSONNELS",
+        items: [
+          {
             title: "Learning App - Japonais",
             description:
               "Application d’apprentissage du japonais avec flashcards et suivi de progression. Stack : React, Next.js et PostgreSQL.",
-            tags: ["React", "NestJS", "Next.js", "PostgreSQL", "TypeScript"],
+            tags: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
             github: "https://github.com/Fulcrum1/Learning-app",
+          },
+          {
+            title: "Site portfolio",
+            description:
+              "Site portfolio personnel pour présenter mes projets et compétences. Traduction fr/en avec i18n. Stack : Next.js et Tailwind CSS.",
+            tags: ["Next.js", "Tailwind CSS", "TypeScript", "i18n"],
+            github: "https://github.com/Fulcrum1/Portfolio",
+          },
+          {
+            title: "Suivi d'abonnement",
+            description:
+              "Suivi des abonnements et factures. Développée avec Nuxt et Golang pour une gestion simplifiée.",
+            tags: ["Nuxt", "Vue", "Golang", "PostgreSQL"],
+            github: "https://github.com/Fulcrum1/subscription-management",
+          },
+          {
+            title: "Entretien moto",
+            description:
+              "Application de suivi d'entretien de moto avec historique et rappels. Stack : React, Next.js et PostgreSQL.",
+            tags: ["Nuxt", "Vue", "Golang", "PostgreSQL"],
+            github: "https://github.com/Fulcrum1/motorbike-maintenance",
           },
         ],
       },
@@ -317,36 +350,69 @@ export const translations = {
           },
         ],
       },
-      projects: {
-        title: "PROJECTS",
+      professionalProjects: {
+        title: "PROFESSIONAL PROJECTS",
         items: [
           {
             title: "CSE Platform",
             description:
-              "Full-stack application for managing a Social and Economic Committee: dashboard, inventory, and orders. Developed with Vue.js and Laravel.",
+              "Full-stack application for managing a Works Council (CSE): dashboard, stock and order management. Built with Vue.js and Laravel.",
             tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
             github: "",
           },
           {
             title: "CRM & E-commerce",
             description:
-              "Customer, order, and statistics management. Integrated e-commerce module. Stack: Vue.js, Laravel, and MySQL.",
+              "Customer, order and statistics management with an integrated e-commerce module. Stack: Vue.js, Laravel and MySQL.",
             tags: ["Vue.js", "Laravel", "PHP", "MySQL"],
             github: "",
           },
           {
-            title: "Time Management",
+            title: "Time Tracking",
             description:
-              "Tracking hours, projects, and leave. Developed with Svelte and Laravel for simplified HR management.",
+              "Hours, projects and leave tracking. Built with Svelte and Laravel for streamlined HR management.",
             tags: ["Svelte", "Laravel", "PHP", "MySQL"],
             github: "",
           },
           {
-            title: "Learning App - Japanese",
+            title: "Site Status Monitor",
             description:
-              "Japanese learning application with flashcards and progress tracking. Stack: React, Next.js, and PostgreSQL.",
-            tags: ["React", "NestJS", "Next.js", "PostgreSQL", "TypeScript"],
+              "Site status monitoring application with a modern interface and detailed reports. Stack: React, Next.js and Golang.",
+            tags: ["React", "Next.js", "Golang", "TypeScript"],
+            github: "",
+          },
+        ],
+      },
+      personalProjects: {
+        title: "PERSONAL PROJECTS",
+        items: [
+          {
+            title: "Japanese Learning App",
+            description:
+              "Japanese language learning application with flashcards and progress tracking. Stack: React, Next.js and PostgreSQL.",
+            tags: ["Next.js", "NestJS", "TypeScript", "PostgreSQL"],
             github: "https://github.com/Fulcrum1/Learning-app",
+          },
+          {
+            title: "Portfolio Website",
+            description:
+              "Personal portfolio website to showcase projects and skills. FR/EN translation with i18n. Stack: Next.js and Tailwind CSS.",
+            tags: ["Next.js", "Tailwind CSS", "TypeScript", "i18n"],
+            github: "https://github.com/Fulcrum1/Portfolio",
+          },
+          {
+            title: "Subscription Tracker",
+            description:
+              "Subscription and invoice tracking application. Built with Nuxt and Golang for simplified management.",
+            tags: ["Nuxt", "Vue", "Golang", "PostgreSQL"],
+            github: "https://github.com/Fulcrum1/subscription-management",
+          },
+          {
+            title: "Motorbike Maintenance",
+            description:
+              "Motorbike maintenance tracking app with service history and reminders. Stack: React, Next.js and PostgreSQL.",
+            tags: ["Nuxt", "Vue", "Golang", "PostgreSQL"],
+            github: "https://github.com/Fulcrum1/motorbike-maintenance",
           },
         ],
       },

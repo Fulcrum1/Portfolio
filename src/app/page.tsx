@@ -3,7 +3,8 @@
 import { useEffect } from 'react';
 import Hero from '@/components/Home/Hero';
 import About from '@/components/Home/About';
-import Projects from '@/components/Home/Projects';
+import PersonalProjects from '@/components/Home/PersonalProjects';
+import ProfessionalProjects from '@/components/Home/ProfessionalProjects';
 import Contact from '@/components/Home/Contact';
 import Footer from '@/components/Home/Footer';
 import { useLanguage } from "@/components/Global/Navbar";
@@ -47,7 +48,8 @@ export default function Home() {
       <div className="relative max-w-6xl mx-auto px-6 pb-12 md:pb-20">
         <Hero language={language} />
         <About language={language} />
-        <Projects language={language} />
+        <ProfessionalProjects language={language} />
+        <PersonalProjects language={language} />
         <Contact language={language} />
         <Footer language={language} />
       </div>

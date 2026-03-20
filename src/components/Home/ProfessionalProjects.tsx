@@ -2,11 +2,11 @@ import { Language, translations } from "@/lib/translations";
 import Title from "../Global/title";
 import { Button } from "../ui/button";
 
-interface ProjectsProps {
+interface ProfessionalProjectsProps {
   language: Language;
 }
 
-export default function Projects({ language }: ProjectsProps) {
+export default function ProfessionalProjects({ language }: ProfessionalProjectsProps) {
   const t = translations[language];
 
   const tagColors = [
@@ -16,10 +16,10 @@ export default function Projects({ language }: ProjectsProps) {
 
   return (
     <section id="projects" className="mb-20 scroll-mt-24">
-      <Title>{t.home.projects.title}</Title>
+      <Title>{t.home.professionalProjects.title}</Title>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {t.home.projects.items.map((project, idx) => (
+        {t.home.professionalProjects.items.map((project, idx) => (
           <div
             key={idx}
             className="card rounded-lg p-6 group cursor-pointer animate-on-scroll hover:scale-[1.02] transition-all"
