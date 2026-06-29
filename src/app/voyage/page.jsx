@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import 'leaflet/dist/leaflet.css'
 
 // ============================================
@@ -345,25 +344,6 @@ export default function Voyage() {
   const citiesMarkersRef = useRef([])
   const polyRef = useRef(null)
   const citiesPolyRef = useRef(null)
-
-  // Chargement des posts depuis Supabase
-  useEffect(() => {
-    const load = () =>
-      supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .then(({ data }) => setPosts(data || []))
-
-    load()
-
-    const channel = supabase
-      .channel('posts')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'posts' }, load)
-      .subscribe()
-
-    return () => supabase.removeChannel(channel)
-  }, [])
 
   // Initialisation de la carte Hokkaido
   useEffect(() => {
