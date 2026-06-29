@@ -48,7 +48,7 @@ export default function Voyage() {
 
   return (
     <main>
-      <h1>🏍️ Road Trip Hokkaido — Juillet 2026</h1>
+      <h1>Road Trip Hokkaido — Juillet 2026</h1>
 
       {/* Itinéraire */}
       <section>
