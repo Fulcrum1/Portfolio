@@ -845,7 +845,7 @@ export default function Voyage() {
           --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
 
           max-width: 1200px;
-          margin: 80px auto 40px;
+          margin: 200px auto 40px;
           padding: 0 20px;
           color: var(--text-primary);
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

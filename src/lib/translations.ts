@@ -9,6 +9,7 @@ export const translations = {
       projects: "Projets",
       contact: "Contact",
       portfolio: "Portfolio",
+      voyage: "Voyage",
     },
     home: {
       hero: {
@@ -298,6 +299,7 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
       portfolio: "Portfolio",
+      voyage: "Voyage",
     },
     home: {
       hero: {

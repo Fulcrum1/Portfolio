@@ -114,6 +114,7 @@ export default function Navbar({ children }: { children: React.ReactNode }) {
         href: path === "/" ? "#contact" : "/#contact",
       },
       { id: "portfolio", label: t.nav.portfolio, href: "/portfolio" },
+      { id: "voyage", label: t.nav.voyage, href: "/voyage" },
     ];
     setNavItems(items);
   }, [t.nav]);
