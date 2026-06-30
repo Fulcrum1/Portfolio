@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import 'leaflet/dist/leaflet.css'
 import type { Map as LeafletMapType, Marker as LeafletMarkerType, Polyline as LeafletPolylineType } from 'leaflet'
 
@@ -352,18 +351,6 @@ export default function Voyage() {
   const markersJap = useRef<LeafletMarkerType[]>([])
   const polyHok = useRef<LeafletPolylineType | null>(null)
   const polyJap = useRef<LeafletPolylineType | null>(null)
-
-  // Supabase realtime
-  useEffect(() => {
-    const load = () =>
-      supabase.from('posts').select('*').order('created_at', { ascending: false })
-        .then(({ data }) => setPosts(data || []))
-    load()
-    const ch = supabase.channel('posts')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'posts' }, load)
-      .subscribe()
-    return () => { supabase.removeChannel(ch) }
-  }, [])
 
   // ── Les DEUX cartes sont créées UNE SEULE FOIS au montage du composant. ──
   // ── Elles ne sont JAMAIS démontées : on bascule juste leur visibilité   ──
