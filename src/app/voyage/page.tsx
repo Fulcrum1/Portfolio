@@ -2,6 +2,16 @@
 
 import { useEffect, useRef, useState } from 'react'
 import 'leaflet/dist/leaflet.css'
+import type { Map as LeafletMapType, Marker as LeafletMarkerType, Polyline as LeafletPolylineType } from 'leaflet'
+
+type Post = {
+  id: string
+  jour: number
+  ville?: string
+  contenu?: string
+  image_url?: string
+  created_at?: string
+}
 
 // ─────────────────────────────────────────────
 // PHOTOS — regroupées par THÈME plutôt que par lieu exact.
@@ -316,23 +326,31 @@ const ROUTE_HOKKAIDO: [number, number][] = [
 
 const COULEURS = ['#4A9EE8','#1D9E75','#D85A30','#D4537E','#BA7517','#639922','#533AB7','#0F6E56','#E24B4A','#3B6D11','#993556']
 
+// Gestionnaire d'erreur de chargement d'image — bascule sur une image de
+// secours sans déclencher de boucle infinie d'erreurs.
+function handleImgError(e: React.SyntheticEvent<HTMLImageElement, Event>) {
+  const target = e.currentTarget
+  target.onerror = null
+  target.src = PH.tokyo
+}
+
 // ─────────────────────────────────────────────
 // COMPOSANT PRINCIPAL
 // ─────────────────────────────────────────────
 export default function Voyage() {
-  const [posts, setPosts] = useState<any[]>([])
+  const [posts, setPosts] = useState<Post[]>([])
   const [tab, setTab] = useState<'hokkaido' | 'japon' | 'news'>('hokkaido')
   const [jourActif, setJourActif] = useState<number | null>(null)
   const [villeActive, setVilleActive] = useState<string | null>(null)
 
   const mapHokRef = useRef<HTMLDivElement>(null)
   const mapJapRef = useRef<HTMLDivElement>(null)
-  const instHok = useRef<any>(null)
-  const instJap = useRef<any>(null)
-  const markersHok = useRef<any[]>([])
-  const markersJap = useRef<any[]>([])
-  const polyHok = useRef<any>(null)
-  const polyJap = useRef<any>(null)
+  const instHok = useRef<LeafletMapType | null>(null)
+  const instJap = useRef<LeafletMapType | null>(null)
+  const markersHok = useRef<LeafletMarkerType[]>([])
+  const markersJap = useRef<LeafletMarkerType[]>([])
+  const polyHok = useRef<LeafletPolylineType | null>(null)
+  const polyJap = useRef<LeafletPolylineType | null>(null)
 
   // ── Les DEUX cartes sont créées UNE SEULE FOIS au montage du composant. ──
   // ── Elles ne sont JAMAIS démontées : on bascule juste leur visibilité   ──
@@ -418,14 +436,14 @@ export default function Voyage() {
 
       if (jourActif == null) {
         polyHok.current = L.polyline(ROUTE_HOKKAIDO, { color: '#4A9EE8', weight: 3, dashArray: '6 4', opacity: .85 }).addTo(map)
-        markersHok.current.forEach((m: any) => m.setOpacity(1))
+        markersHok.current.forEach((m) => m.setOpacity(1))
         map.fitBounds(L.latLngBounds(ROUTE_HOKKAIDO), { padding: [50, 50] })
       } else {
         const idx = jourActif - 1
         const pts: [number, number][] = ETAPES[idx].escales.map(e => [e.lat, e.lng])
         if (pts.length >= 2)
           polyHok.current = L.polyline(pts, { color: COULEURS[idx % COULEURS.length], weight: 4, opacity: .95 }).addTo(map)
-        markersHok.current.forEach((m: any, i: number) => m.setOpacity(i === idx ? 1 : 0.25))
+        markersHok.current.forEach((m, i) => m.setOpacity(i === idx ? 1 : 0.25))
         map.fitBounds(L.latLngBounds(pts), { padding: [60, 60], animate: true })
       }
     })()
@@ -544,7 +562,7 @@ export default function Voyage() {
             </div>
 
             <img src={etapeActive.image} alt={etapeActive.ville} className="card-img"
-              onError={(e: any) => { e.target.onerror = null; e.target.src = PH.tokyo }} />
+              onError={handleImgError} />
 
             <p className="card-note">{etapeActive.note}</p>
 
@@ -559,7 +577,7 @@ export default function Voyage() {
                   {i > 0 && <div className="escale-arrow">↓</div>}
                   <div className="escale-card">
                     {esc.image && <img src={esc.image} alt={esc.nom} className="escale-img"
-                      onError={(e: any) => { e.target.onerror = null; e.target.src = PH.tokyo }} />}
+                      onError={handleImgError} />}
                     <div className="escale-body">
                       <strong className="escale-name">{esc.nom}</strong>
                       {esc.note && <p className="escale-note">{esc.note}</p>}
@@ -586,8 +604,8 @@ export default function Voyage() {
             <h2 className="overview-title">🏍️ Hokkaido — boucle complète</h2>
             <p className="overview-sub">4 juillet → 14 juillet · ~1 700 km · 11 jours</p>
             <p className="overview-text">
-              Tour complet de l'île : côte de la mer du Japon, remontée jusqu'au cap Sōya, côte d'Okhotsk,
-              presqu'île de Shiretoko classée UNESCO, lacs volcaniques, cap Erimo et champs de lavande de Furano.
+              Tour complet de l&apos;île : côte de la mer du Japon, remontée jusqu&apos;au cap Sōya, côte d&apos;Okhotsk,
+              presqu&apos;île de Shiretoko classée UNESCO, lacs volcaniques, cap Erimo et champs de lavande de Furano.
               Cliquez sur un jour pour voir le détail.
             </p>
             <div className="overview-grid">
@@ -616,7 +634,7 @@ export default function Voyage() {
               style={{ '--vcol': v.couleur } as React.CSSProperties}>
               <button className="ville-head" onClick={() => setVilleActive(x => x === v.nom ? null : v.nom)}>
                 <img src={v.image} alt={v.nom} className="ville-img"
-                  onError={(e: any) => { e.target.onerror = null; e.target.src = PH.tokyo }} />
+                  onError={handleImgError} />
                 <div className="ville-overlay">
                   <h2 className="ville-name">{v.nom}</h2>
                   <p className="ville-dates">{v.dates}</p>
@@ -629,7 +647,7 @@ export default function Voyage() {
                   {v.items.map((it, i) => (
                     <li key={i} className="ville-item">
                       {it.image && <img src={it.image} alt={it.nom} className="vi-img"
-                        onError={(e: any) => { e.target.onerror = null; e.target.src = PH.tokyo }} />}
+                        onError={handleImgError} />}
                       <div className="vi-body">
                         <strong className="vi-name">{it.nom}</strong>
                         {it.note && <p className="vi-note">{it.note}</p>}
@@ -646,7 +664,7 @@ export default function Voyage() {
       {/* ── NOUVELLES ── */}
       <section className="section" style={{ display: tab === 'news' ? 'block' : 'none' }}>
         {posts.length === 0
-          ? <div className="empty">Aucune nouvelle pour l'instant.<br /><small>Guillaume postera dès son arrivée au Japon !</small></div>
+          ? <div className="empty">Aucune nouvelle pour l&apos;instant.<br /><small>Guillaume postera dès son arrivée au Japon !</small></div>
           : posts.map(post => {
             const etape = ETAPES.find(e => e.jour === post.jour)
             const col = COULEURS[(etape?.jour || 1) - 1]
@@ -692,7 +710,6 @@ export default function Voyage() {
           min-height: 100vh;
           max-width: 1100px;
           margin: 0 auto;
-          margin-top: 50px;
           padding: 110px 20px 60px;
         }
 
