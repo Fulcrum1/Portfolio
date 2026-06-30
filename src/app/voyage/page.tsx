@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { supabase } from '@/lib/supabase'
 import 'leaflet/dist/leaflet.css'
 import type { Map as LeafletMapType, Marker as LeafletMarkerType, Polyline as LeafletPolylineType } from 'leaflet'
 
@@ -352,6 +353,18 @@ export default function Voyage() {
   const polyHok = useRef<LeafletPolylineType | null>(null)
   const polyJap = useRef<LeafletPolylineType | null>(null)
 
+  // Supabase realtime
+  useEffect(() => {
+    const load = () =>
+      supabase.from('posts').select('*').order('created_at', { ascending: false })
+        .then(({ data }) => setPosts(data || []))
+    load()
+    const ch = supabase.channel('posts')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'posts' }, load)
+      .subscribe()
+    return () => { supabase.removeChannel(ch) }
+  }, [])
+
   // ── Les DEUX cartes sont créées UNE SEULE FOIS au montage du composant. ──
   // ── Elles ne sont JAMAIS démontées : on bascule juste leur visibilité   ──
   // ── en CSS (display:none) selon l'onglet actif. C'est ce qui élimine   ──
@@ -365,7 +378,7 @@ export default function Voyage() {
       // Carte Hokkaido
       // Le check sur _leaflet_id empêche une double-init quand React Strict
       // Mode (dev only) monte → démonte → remonte l'effet très rapidement.
-      if (mapHokRef.current && !instHok.current && !(mapHokRef.current as any)._leaflet_id) {
+      if (mapHokRef.current && !instHok.current && !(mapHokRef.current as HTMLDivElement & { _leaflet_id?: number })._leaflet_id) {
         const map = L.map(mapHokRef.current, { zoomControl: false, attributionControl: false })
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map)
         instHok.current = map
@@ -387,7 +400,7 @@ export default function Voyage() {
       }
 
       // Carte Japon
-      if (mapJapRef.current && !instJap.current && !(mapJapRef.current as any)._leaflet_id) {
+      if (mapJapRef.current && !instJap.current && !(mapJapRef.current as HTMLDivElement & { _leaflet_id?: number })._leaflet_id) {
         const map = L.map(mapJapRef.current, { zoomControl: false, attributionControl: false })
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map)
         instJap.current = map
@@ -502,7 +515,7 @@ export default function Voyage() {
         ].map(t => (
           <button key={t.id} role="tab" aria-selected={tab === t.id}
             className={`tab${tab === t.id ? ' active' : ''}`}
-            onClick={() => { setTab(t.id as any); if (t.id !== 'hokkaido') setJourActif(null) }}>
+            onClick={() => { setTab(t.id as 'hokkaido' | 'japon' | 'news'); if (t.id !== 'hokkaido') setJourActif(null) }}>
             <span className="tab-label">{t.label}</span>
             <span className="tab-sub">{t.sub}</span>
           </button>
