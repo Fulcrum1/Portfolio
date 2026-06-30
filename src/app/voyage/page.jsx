@@ -2,16 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import 'leaflet/dist/leaflet.css'
-import type { Map as LeafletMapType, Marker as LeafletMarkerType, Polyline as LeafletPolylineType } from 'leaflet'
-
-type Post = {
-  id: string
-  jour: number
-  ville?: string
-  contenu?: string
-  image_url?: string
-  created_at?: string
-}
 
 // ─────────────────────────────────────────────
 // PHOTOS — regroupées par THÈME plutôt que par lieu exact.
@@ -312,7 +302,7 @@ const VILLES = [
   },
 ]
 
-const ROUTE_HOKKAIDO: [number, number][] = [
+const ROUTE_HOKKAIDO = [
   [42.7791317,141.6866364],[43.199041,141.002118],[43.334329,140.346374],
   [43.199041,141.002118],[43.9410074,141.6369432],[45.4156307,141.6733641],
   [45.522945,141.9365908],[44.356439,143.354352],[44.0206059,144.2734837],
@@ -328,7 +318,7 @@ const COULEURS = ['#4A9EE8','#1D9E75','#D85A30','#D4537E','#BA7517','#639922','#
 
 // Gestionnaire d'erreur de chargement d'image — bascule sur une image de
 // secours sans déclencher de boucle infinie d'erreurs.
-function handleImgError(e: React.SyntheticEvent<HTMLImageElement, Event>) {
+function handleImgError(e) {
   const target = e.currentTarget
   target.onerror = null
   target.src = PH.tokyo
@@ -338,19 +328,19 @@ function handleImgError(e: React.SyntheticEvent<HTMLImageElement, Event>) {
 // COMPOSANT PRINCIPAL
 // ─────────────────────────────────────────────
 export default function Voyage() {
-  const [posts, setPosts] = useState<Post[]>([])
-  const [tab, setTab] = useState<'hokkaido' | 'japon' | 'news'>('hokkaido')
-  const [jourActif, setJourActif] = useState<number | null>(null)
-  const [villeActive, setVilleActive] = useState<string | null>(null)
+  const [posts, setPosts] = useState([])
+  const [tab, setTab] = useState('hokkaido')
+  const [jourActif, setJourActif] = useState(null)
+  const [villeActive, setVilleActive] = useState(null)
 
-  const mapHokRef = useRef<HTMLDivElement>(null)
-  const mapJapRef = useRef<HTMLDivElement>(null)
-  const instHok = useRef<LeafletMapType | null>(null)
-  const instJap = useRef<LeafletMapType | null>(null)
-  const markersHok = useRef<LeafletMarkerType[]>([])
-  const markersJap = useRef<LeafletMarkerType[]>([])
-  const polyHok = useRef<LeafletPolylineType | null>(null)
-  const polyJap = useRef<LeafletPolylineType | null>(null)
+  const mapHokRef = useRef(null)
+  const mapJapRef = useRef(null)
+  const instHok = useRef(null)
+  const instJap = useRef(null)
+  const markersHok = useRef([])
+  const markersJap = useRef([])
+  const polyHok = useRef(null)
+  const polyJap = useRef(null)
 
   // ── Les DEUX cartes sont créées UNE SEULE FOIS au montage du composant. ──
   // ── Elles ne sont JAMAIS démontées : on bascule juste leur visibilité   ──
@@ -365,7 +355,7 @@ export default function Voyage() {
       // Carte Hokkaido
       // Le check sur _leaflet_id empêche une double-init quand React Strict
       // Mode (dev only) monte → démonte → remonte l'effet très rapidement.
-      if (mapHokRef.current && !instHok.current && !(mapHokRef.current as HTMLDivElement & { _leaflet_id?: number })._leaflet_id) {
+      if (mapHokRef.current && !instHok.current && !mapHokRef.current._leaflet_id) {
         const map = L.map(mapHokRef.current, { zoomControl: false, attributionControl: false })
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map)
         instHok.current = map
@@ -387,7 +377,7 @@ export default function Voyage() {
       }
 
       // Carte Japon
-      if (mapJapRef.current && !instJap.current && !(mapJapRef.current as HTMLDivElement & { _leaflet_id?: number })._leaflet_id) {
+      if (mapJapRef.current && !instJap.current && !mapJapRef.current._leaflet_id) {
         const map = L.map(mapJapRef.current, { zoomControl: false, attributionControl: false })
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map)
         instJap.current = map
@@ -404,7 +394,7 @@ export default function Voyage() {
           return m
         })
 
-        const pts: [number, number][] = VILLES.map(v => [v.lat, v.lng])
+        const pts = VILLES.map(v => [v.lat, v.lng])
         polyJap.current = L.polyline(pts, { color: '#fff', weight: 2, dashArray: '5 3', opacity: .7 }).addTo(map)
         // Pas de fitBounds ici : le conteneur est display:none au montage
         // (onglet "hokkaido" actif), donc sa taille vaut 0px et Leaflet
@@ -440,7 +430,7 @@ export default function Voyage() {
         map.fitBounds(L.latLngBounds(ROUTE_HOKKAIDO), { padding: [50, 50] })
       } else {
         const idx = jourActif - 1
-        const pts: [number, number][] = ETAPES[idx].escales.map(e => [e.lat, e.lng])
+        const pts = ETAPES[idx].escales.map(e => [e.lat, e.lng])
         if (pts.length >= 2)
           polyHok.current = L.polyline(pts, { color: COULEURS[idx % COULEURS.length], weight: 4, opacity: .95 }).addTo(map)
         markersHok.current.forEach((m, i) => m.setOpacity(i === idx ? 1 : 0.25))
@@ -464,7 +454,7 @@ export default function Voyage() {
         if (!japanFitted.current) {
           ;(async () => {
             const L = (await import('leaflet')).default
-            const pts: [number, number][] = VILLES.map(v => [v.lat, v.lng])
+            const pts = VILLES.map(v => [v.lat, v.lng])
             instJap.current.fitBounds(L.latLngBounds(pts), { padding: [60, 60], maxZoom: 5.5 })
             japanFitted.current = true
           })()
@@ -502,7 +492,7 @@ export default function Voyage() {
         ].map(t => (
           <button key={t.id} role="tab" aria-selected={tab === t.id}
             className={`tab${tab === t.id ? ' active' : ''}`}
-            onClick={() => { setTab(t.id as 'hokkaido' | 'japon' | 'news'); if (t.id !== 'hokkaido') setJourActif(null) }}>
+            onClick={() => { setTab(t.id); if (t.id !== 'hokkaido') setJourActif(null) }}>
             <span className="tab-label">{t.label}</span>
             <span className="tab-sub">{t.sub}</span>
           </button>
@@ -631,7 +621,7 @@ export default function Voyage() {
         <div className="villes-grid">
           {VILLES.map(v => (
             <div key={v.nom} className={`ville-card${villeActive === v.nom ? ' expanded' : ''}`}
-              style={{ '--vcol': v.couleur } as React.CSSProperties}>
+              style={{ '--vcol': v.couleur }}>
               <button className="ville-head" onClick={() => setVilleActive(x => x === v.nom ? null : v.nom)}>
                 <img src={v.image} alt={v.nom} className="ville-img"
                   onError={handleImgError} />
